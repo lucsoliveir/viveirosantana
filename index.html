@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viveiro Santana - E-commerce de Plantas e Mudas</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#15803d">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16',
+                        },
+                        earth: {
+                            50: '#fdf8f6',
+                            800: '#854d0e',
+                            900: '#713f12',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #15803d; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #14532d; }
+            .vs-ic { width: 1em; height: 1em; display: inline-block; vertical-align: -0.125em; flex-shrink: 0; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+    <!-- Ícones SVG (sprite) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false"><symbol id="i-star" viewBox="0 0 24 24"><g fill="currentColor" stroke="none"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.2 1.2-6.5L2.5 9.5l6.6-.9L12 2.6z"/></g></symbol><symbol id="i-heart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.6a4.7 4.7 0 0 1 8.5 2.6c0 6.2-8.5 11.3-8.5 11.3z"/></g></symbol><symbol id="i-heart-solid" viewBox="0 0 24 24"><g fill="currentColor" stroke="none"><path d="M12 20.8S3 15.6 3 9.2A5 5 0 0 1 12 6.4a5 5 0 0 1 9 2.8c0 6.4-9 11.6-9 11.6z"/></g></symbol><symbol id="i-cart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 3.5h2.7l2.4 11.3h10.5l2.2-8.3H6.2"/><circle cx="9.2" cy="19.4" r="1.4" fill="currentColor"/><circle cx="17.2" cy="19.4" r="1.4" fill="currentColor"/></g></symbol><symbol id="i-cart-plus" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 3.5h2.7l2.4 11.3h10.5l2.2-8.3H6.2"/><circle cx="9.2" cy="19.4" r="1.4" fill="currentColor"/><circle cx="17.2" cy="19.4" r="1.4" fill="currentColor"/><path d="M13 7.6v4.4M10.8 9.8h4.4"/></g></symbol><symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.4 2"/></g></symbol><symbol id="i-xmark" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></g></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></g></symbol><symbol id="i-arrow-left" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12h-15M10.5 6l-6 6 6 6"/></g></symbol><symbol id="i-arrow-up" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.5v-15M6 10.5l6-6 6 6"/></g></symbol><symbol id="i-arrow-down" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5v15M6 13.5l6 6 6-6"/></g></symbol><symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.6 4.2 2 2 0 0 1 4.6 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.6 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></g></symbol><symbol id="i-filter" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 5h17l-6.5 8v6l-4-2v-4L3.5 5z"/></g></symbol><symbol id="i-circle-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.4l2.7 2.7 5.3-5.8"/></g></symbol><symbol id="i-box" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.8l8-4 8 4v8.4l-8 4-8-4V7.8z"/><path d="M4 7.8l8 4 8-4M12 11.8v8.4"/></g></symbol><symbol id="i-seedling" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9"/><path d="M12 13c0-4-3-6-8-6 0 4 3 6 8 6z"/><path d="M12 11c0-3.5 2.5-6 8-6 0 4-3 6.5-8 6.5"/></g></symbol><symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></g></symbol><symbol id="i-instagram" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></g></symbol><symbol id="i-facebook" viewBox="0 0 24 24"><g fill="currentColor" stroke="none"><g transform="translate(1.44 1.44) scale(.88)"><path d="M24 12.07C24 5.45 18.63.07 12 .07S0 5.45 0 12.07c0 5.99 4.39 10.95 10.13 11.85v-8.39H7.08v-3.47h3.05V9.43c0-3.01 1.79-4.67 4.53-4.67 1.31 0 2.69.23 2.69.23v2.95h-1.51c-1.49 0-1.96.93-1.96 1.87v2.25h3.33l-.53 3.47h-2.8v8.39C19.61 23.02 24 18.06 24 12.07z"/></g></g></symbol><symbol id="i-whatsapp" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/><path d="M9 8.6c0 3.6 2.8 6.4 6.4 6.4l.9-1.5-1.9-1-.9.8c-.9-.4-1.8-1.3-2.2-2.2l.8-.9-1-1.9L9 8.6z" fill="currentColor" stroke-width="1" stroke-linejoin="round"/></g></symbol></svg>
+
+    <div class="bg-brand-950 text-brand-100 text-xs sm:text-sm py-2 px-4 border-b border-brand-900">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-2 font-medium">
+                <span class="bg-brand-600 text-white text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-bold animate-pulse">Oferta PIX</span>
+                <span>Desconto de 5% para pagamentos via PIX em todo o site!</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-4 text-brand-200">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition"><svg class="vs-ic" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition"><svg class="vs-ic" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+                    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="hover:text-white transition"><svg class="vs-ic" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+                </div>
+                <div class="flex items-center gap-3 border-l border-brand-800 pl-4">
+                    <a href="tel:11999999999" class="hover:text-white transition"><svg class="vs-ic mr-1.5 text-brand-400" aria-hidden="true"><use href="#i-phone"/></svg>(11) 99999-9999</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            
+            <!-- Logo oficial -->
+            <a href="#" onclick="router('home'); return false;" class="flex items-center gap-3 group shrink-0">
+                <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center p-1.5 shadow-inner border border-brand-100 group-hover:scale-105 transition">
+                    <!-- Logo oficial SVG / Base64 adaptada -->
+                    <svg viewBox="0 0 200 200" class="w-full h-full text-brand-600" fill="currentColor">
+                        <path d="M100 20C55.8 20 20 55.8 20 100s35.8 80 80 80 80-35.8 80-80-35.8-80-80-80zm0 145c-35.8 0-65-29.2-65-65s29.2-65 65-65 65 29.2 65 65-29.2 65-65 65z" fill="#15803d"/>
+                        <path d="M100 45c-30.3 0-55 24.7-55 55 0 15.2 6.1 29 16.1 39.1l10.6-10.6C64.6 122.2 60 111.6 60 100c0-22.1 17.9-40 40-40s40 17.9 40 40c0 11.6-4.6 22.2-12.7 29.5l10.6 10.6C148.9 129 155 115.2 155 100c0-30.3-24.7-55-55-55z" fill="#22c55e"/>
+                        <path d="M100 70c-16.6 0-30 13.4-30 30 0 8.3 3.4 15.8 8.8 21.2l10.6-10.6C86.7 108.7 85 104.6 85 100c0-8.3 6.7-15 15-15s15 6.7 15 15c0 4.6-1.7 8.7-4.4 10.6l10.6 10.6c5.4-5.4 8.8-12.9 8.8-21.2 0-16.6-13.4-30-30-30z" fill="#166534"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl sm:text-2xl font-extrabold text-brand-900 tracking-tight leading-none">Viveiro Santana</span>
+                    <span class="text-[11px] font-bold text-brand-600 tracking-widest uppercase mt-0.5">Excelência na Produção</span>
+                </div>
+            </a>
+
+            <!-- Barra de Busca Central -->
+            <div id="searchWrap" class="hidden md:flex flex-1 max-w-xl mx-4 relative">
+                <div class="w-full flex items-center bg-slate-50 border border-slate-200 rounded-full shadow-sm pl-1.5 pr-4 focus-within:ring-2 focus-within:ring-brand-500 focus-within:bg-white transition">
+                    <select id="searchCategorySelect" onchange="handleSearch(true)" class="shrink-0 w-44 bg-slate-100 hover:bg-slate-200 text-xs font-semibold text-slate-700 py-2 pl-3 pr-2 my-1.5 rounded-full border-0 outline-none cursor-pointer transition truncate">
+                        <option value="">Todas as Categorias</option>
+                        <option value="Campo / Produtor rural">Campo / Produtor</option>
+                        <option value="Nativas e Reflorestamento">Nativas & Reflorest.</option>
+                        <option value="Adubos e Fertilizantes">Adubos & Fert.</option>
+                        <option value="Frutíferas">Frutíferas</option>
+                        <option value="Palmeiras">Palmeiras</option>
+                        <option value="Orquídeas">Orquídeas</option>
+                        <option value="Ornamentais">Ornamentais</option>
+                        <option value="Vasos">Vasos</option>
+                        <option value="Diversas">Diversas</option>
+                    </select>
+                    <span class="w-px h-5 bg-slate-200 mx-3 shrink-0"></span>
+                    <input type="text" id="searchInput" autocomplete="off" oninput="handleSearch()" onfocus="showSuggestions('desktop')" onkeydown="onSearchKeydown(event, 'desktop')" placeholder="Buscar mudas, plantas, adubos, vasos..." class="flex-1 min-w-0 py-3 bg-transparent text-sm font-medium focus:outline-none placeholder:text-slate-400">
+                    <span class="ml-2 text-slate-400 pointer-events-none shrink-0">
+                        <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+                    </span>
+                </div>
+                <!-- Sugestões de busca (desktop) -->
+                <div id="searchSuggestions" class="hidden absolute left-0 right-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden z-50 max-h-[70vh] overflow-y-auto"></div>
+            </div>
+
+            <!-- Ações de topo (Favoritos, Carrinho, Filtros mobile) -->
+            <div class="flex items-center gap-3">
+                <button onclick="toggleFavoritesModal()" class="relative p-2.5 rounded-full bg-slate-50 hover:bg-brand-50 text-slate-700 hover:text-brand-700 transition border border-slate-200" title="Meus Favoritos">
+                    <svg class="vs-ic text-lg" aria-hidden="true"><use href="#i-heart"/></svg>
+                    <span id="favoritesBadge" class="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white hidden">0</span>
+                </button>
+
+                <button onclick="toggleCartDrawer()" class="flex items-center gap-2.5 bg-brand-700 hover:bg-brand-800 text-white px-4 py-2.5 rounded-full transition shadow-md hover:shadow-lg active:scale-95">
+                    <div class="relative">
+                        <svg class="vs-ic text-base" aria-hidden="true"><use href="#i-cart"/></svg>
+                        <span id="cartCountBadge" class="absolute -top-2 -right-2 bg-amber-400 text-brand-950 font-extrabold text-[10px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-brand-700">0</span>
+                    </div>
+                    <div class="hidden sm:flex flex-col text-left">
+                        <span class="text-[10px] text-brand-200 font-medium leading-none">Carrinho</span>
+                        <span id="cartTotalHeader" class="text-xs font-bold leading-none mt-1">R$ 0,00</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Barra de busca mobile -->
+        <div class="md:hidden px-4 pb-3">
+            <div id="searchWrapMobile" class="relative w-full flex items-center">
+                <input type="text" id="searchInputMobile" autocomplete="off" oninput="handleSearchMobile()" onfocus="showSuggestions('mobile')" onkeydown="onSearchKeydown(event, 'mobile')" placeholder="Buscar mudas e plantas..." class="w-full pl-4 pr-10 py-2.5 bg-slate-100 border border-slate-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                <span class="absolute right-4 text-slate-400 pointer-events-none"><svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+                <div id="searchSuggestionsMobile" class="hidden absolute left-0 right-0 top-full mt-2 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden z-50 max-h-[65vh] overflow-y-auto"></div>
+            </div>
+        </div>
+
+        <!-- Menu Principal com as 9 Categorias Obrigatórias -->
+        <nav class="bg-brand-900 text-white border-t border-brand-800 overflow-x-auto scrollbar-none">
+            <div class="max-w-7xl mx-auto px-4 flex items-center justify-start lg:justify-center gap-1 sm:gap-2 py-2.5 whitespace-nowrap text-xs sm:text-sm font-semibold">
+                <a href="#" data-cat="Todas" onclick="filterByCategory('Todas', true); return false;" class="nav-cat-btn px-3 py-1.5 rounded-lg bg-brand-800 text-white transition active">Todas</a>
+                <a href="#" data-cat="Campo / Produtor rural" onclick="filterByCategory('Campo / Produtor rural', true); return false;" class="nav-cat-btn px-3 py-1.5 rounded-lg hover:bg-brand-800 text-brand-100 hover:text-white transition">Campo / Produtor</a>
+                <a href="#" data-cat="Nativas e Reflorestamento" onclick="filterByCategory('Nativas e Reflorestamento', true); return false;" class="nav-cat-btn px-3 py-1.5 rounded-lg hover:bg-brand-800 text-brand-100 hover:text-white transition">Nativas & Reflor.</a>
+                <a href="#" data-cat="Adubos e Fertilizantes" onclick="filterByCategory('Adubos e Fertilizantes', true); return false;" class="nav-cat-btn px-3 py-1.5 rounded-lg hover:bg-brand-800 text-brand-100 hover:text-white transition">Adubos & Fert.</a>
+                <a href="#" data-cat="Frutíferas" onclick="filterByCategory('Frutíferas', true); return false;" class="nav-cat-btn px-3 py-1.5 rounded-lg hover:bg-brand-800 text-brand-100 hover:text-white transition">Frutíferas</a>
+                <a href="#" data-cat="Palmeiras" onclick="filterByCategory('Palmeiras', true); return false;" class="nav-cat-btn px-3 py-1.5 rounded-lg hover:bg-brand-800 text-brand-100 hover:text-white transition">Palmeiras</a>
+                <a href="#" data-cat="Orquídeas" onclick="filterByCategory('Orquídeas', true); return false;" class="nav-cat-btn px-3 py-1.5 rounded-lg hover:bg-brand-800 text-brand-100 hover:text-white transition">Orquídeas</a>
+                <a href="#" data-cat="Ornamentais" onclick="filterByCategory('Ornamentais', true); return false;" class="nav-cat-btn px-3 py-1.5 rounded-lg hover:bg-brand-800 text-brand-100 hover:text-white transition">Ornamentais</a>
+                <a href="#" data-cat="Vasos" onclick="filterByCategory('Vasos', true); return false;" class="nav-cat-btn px-3 py-1.5 rounded-lg hover:bg-brand-800 text-brand-100 hover:text-white transition">Vasos</a>
+                <a href="#" data-cat="Diversas" onclick="filterByCategory('Diversas', true); return false;" class="nav-cat-btn px-3 py-1.5 rounded-lg hover:bg-brand-800 text-brand-100 hover:text-white transition">Diversas</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="mainContainer">
+        <!-- Home View -->
+        <div id="homeView" class="space-y-12 pb-16">
+            
+            <!-- Hero Banner Principal -->
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+                <div class="relative bg-gradient-to-br from-brand-900 via-brand-950 to-slate-950 rounded-3xl overflow-hidden shadow-2xl border border-brand-800 text-white p-6 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <!-- Papel de parede de plantas (ilustrações em SVG, atrás do conteúdo) -->
+                    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+                        <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><defs><pattern id="vsPlantWall" width="600" height="640" patternUnits="userSpaceOnUse" patternTransform="rotate(-4)"><g transform="translate(40 195) rotate(-25) scale(1.15)"><path d="M0 0 Q70 -30 150 -10" fill="none" stroke="#86efac" stroke-opacity=".32" stroke-width="1.4" stroke-linecap="round"/><g transform="translate(12.8 -5.0) rotate(-85.2)"><path d="M0 0 C7.4 -6.7 24.2 -7.1 33.6 0.0 C24.2 6.4 8.4 6.7 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L29.5 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(12.8 -5.0) rotate(43.8)"><path d="M0 0 C7.4 -6.7 24.2 -7.1 33.6 0.0 C24.2 6.4 8.4 6.7 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L29.5 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(25.8 -9.3) rotate(-77.9)"><path d="M0 0 C6.5 -6.0 21.4 -6.3 29.8 0.0 C21.4 5.7 7.4 6.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L26.2 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(25.8 -9.3) rotate(44.4)"><path d="M0 0 C6.5 -6.0 21.4 -6.3 29.8 0.0 C21.4 5.7 7.4 6.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L26.2 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(38.9 -12.6) rotate(-74.6)"><path d="M0 0 C6.1 -5.5 19.9 -5.8 27.6 0.0 C19.9 5.2 6.9 5.5 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L24.3 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(38.9 -12.6) rotate(44.7)"><path d="M0 0 C6.1 -5.5 19.9 -5.8 27.6 0.0 C19.9 5.2 6.9 5.5 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L24.3 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(52.2 -15.2) rotate(-75.4)"><path d="M0 0 C6.1 -5.5 19.8 -5.8 27.5 0.0 C19.8 5.2 6.9 5.5 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L24.2 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(52.2 -15.2) rotate(48.8)"><path d="M0 0 C6.1 -5.5 19.8 -5.8 27.5 0.0 C19.8 5.2 6.9 5.5 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L24.2 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(65.7 -16.9) rotate(-64.3)"><path d="M0 0 C5.5 -5.0 18.1 -5.3 25.1 0.0 C18.1 4.8 6.3 5.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L22.1 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(65.7 -16.9) rotate(52.7)"><path d="M0 0 C5.5 -5.0 18.1 -5.3 25.1 0.0 C18.1 4.8 6.3 5.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L22.1 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(79.3 -17.9) rotate(-62.8)"><path d="M0 0 C4.8 -4.3 15.6 -4.6 21.7 0.0 C15.6 4.1 5.4 4.3 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L19.1 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(79.3 -17.9) rotate(64.4)"><path d="M0 0 C4.8 -4.3 15.6 -4.6 21.7 0.0 C15.6 4.1 5.4 4.3 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L19.1 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(93.1 -17.9) rotate(-61.7)"><path d="M0 0 C4.5 -4.1 14.9 -4.3 20.7 0.0 C14.9 3.9 5.2 4.1 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L18.2 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(93.1 -17.9) rotate(68.1)"><path d="M0 0 C4.5 -4.1 14.9 -4.3 20.7 0.0 C14.9 3.9 5.2 4.1 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L18.2 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(107.1 -17.2) rotate(-53.7)"><path d="M0 0 C3.5 -3.2 11.5 -3.4 16.0 0.0 C11.5 3.0 4.0 3.2 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L14.1 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(107.1 -17.2) rotate(64.6)"><path d="M0 0 C3.5 -3.2 11.5 -3.4 16.0 0.0 C11.5 3.0 4.0 3.2 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L14.1 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(121.2 -15.6) rotate(-57.9)"><path d="M0 0 C3.0 -2.7 9.8 -2.9 13.6 0.0 C9.8 2.6 3.4 2.7 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L12.0 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(121.2 -15.6) rotate(68.0)"><path d="M0 0 C3.0 -2.7 9.8 -2.9 13.6 0.0 C9.8 2.6 3.4 2.7 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L12.0 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(135.5 -13.2) rotate(-54.1)"><path d="M0 0 C2.7 -2.4 8.7 -2.5 12.1 0.0 C8.7 2.3 3.0 2.4 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L10.7 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(135.5 -13.2) rotate(73.9)"><path d="M0 0 C2.7 -2.4 8.7 -2.5 12.1 0.0 C8.7 2.3 3.0 2.4 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L10.7 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(150.0 -10.0) rotate(14.0)"><path d="M0 0 C2.6 -3.0 8.6 -3.2 12.0 0.0 C8.6 2.8 3.0 3.0 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L10.6 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g></g><g transform="translate(270 115) rotate(20) scale(1.0)"><path d="M0 0 Q60 20 130 -20" fill="none" stroke="#86efac" stroke-opacity=".32" stroke-width="1.4" stroke-linecap="round"/><g transform="translate(17.3 4.5) rotate(60.8)"><path d="M0 0 C9.5 -14.0 31.0 -11.7 43.0 1.2 C31.0 16.3 10.8 14.0 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L37.9 1.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(35.1 6.5) rotate(-43.4)"><path d="M0 0 C8.8 -13.1 28.9 -16.7 40.1 -1.2 C28.9 9.4 10.0 13.1 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L35.3 -1.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(53.3 6.1) rotate(43.7)"><path d="M0 0 C8.2 -12.1 26.7 -9.7 37.1 1.2 C26.7 14.5 9.3 12.1 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L32.7 1.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(71.8 3.3) rotate(-53.3)"><path d="M0 0 C7.5 -11.1 24.6 -14.7 34.2 -1.2 C24.6 7.6 8.5 11.1 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L30.1 -1.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(90.8 -2.0) rotate(22.2)"><path d="M0 0 C6.9 -10.2 22.5 -7.7 31.2 1.2 C22.5 12.7 7.8 10.2 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L27.5 1.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(110.2 -9.8) rotate(-67.9)"><path d="M0 0 C6.2 -9.2 20.3 -12.7 28.3 -1.2 C20.3 5.8 7.1 9.2 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L24.9 -1.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(130.0 -20.0) rotate(-21.7)"><path d="M0 0 C7.9 -12.0 25.9 -12.6 36.0 0.0 C25.9 11.4 9.0 12.0 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L31.7 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g></g><g transform="translate(470 235) rotate(8) scale(0.85)"><g transform="translate(0.0 0.0) rotate(-154.6)"><path d="M0 0 C19.1 -8.0 62.6 -8.4 87.0 0.0 C62.6 7.6 21.8 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L76.6 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-137.3)"><path d="M0 0 C17.1 -8.0 56.1 -8.4 77.9 0.0 C56.1 7.6 19.5 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L68.5 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-123.6)"><path d="M0 0 C17.9 -8.0 58.6 -8.4 81.3 0.0 C58.6 7.6 20.3 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L71.6 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-104.4)"><path d="M0 0 C19.8 -8.0 64.7 -8.4 89.9 0.0 C64.7 7.6 22.5 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L79.1 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-89.4)"><path d="M0 0 C16.7 -8.0 54.8 -8.4 76.1 0.0 C54.8 7.6 19.0 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L67.0 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-71.0)"><path d="M0 0 C18.3 -8.0 59.9 -8.4 83.1 0.0 C59.9 7.6 20.8 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L73.2 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-59.7)"><path d="M0 0 C19.4 -8.0 63.5 -8.4 88.2 0.0 C63.5 7.6 22.1 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L77.6 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-45.1)"><path d="M0 0 C20.8 -8.0 68.0 -8.4 94.5 0.0 C68.0 7.6 23.6 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L83.2 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-23.9)"><path d="M0 0 C17.7 -8.0 57.9 -8.4 80.5 0.0 C57.9 7.6 20.1 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L70.8 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><circle r="3" fill="#86efac" fill-opacity=".35"/></g><g transform="translate(150 375) rotate(-8) scale(0.9)"><path d="M0 0 Q4 40 -2 80" stroke="#86efac" stroke-opacity=".32" stroke-width="1.4" fill="none" stroke-linecap="round"/><g transform="translate(-1.0 50.0) rotate(-150.0)"><path d="M0 0 C4.8 -7.0 15.8 -7.4 22.0 0.0 C15.8 6.6 5.5 7.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L19.4 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(1.0 62.0) rotate(-30.0)"><path d="M0 0 C4.0 -6.0 13.0 -6.3 18.0 0.0 C13.0 5.7 4.5 6.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L15.8 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="rotate(0)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><g transform="rotate(60)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><g transform="rotate(120)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><g transform="rotate(180)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><g transform="rotate(240)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><g transform="rotate(300)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><circle r="4" fill="#86efac" fill-opacity=".30"/></g><g transform="translate(370 375) rotate(-155) scale(0.95)"><path d="M0 0 Q60 20 130 -20" fill="none" stroke="#86efac" stroke-opacity=".32" stroke-width="1.4" stroke-linecap="round"/><g transform="translate(17.3 4.5) rotate(53.0)"><path d="M0 0 C9.5 -14.0 31.0 -11.7 43.0 1.2 C31.0 16.3 10.8 14.0 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L37.9 1.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(35.1 6.5) rotate(-45.2)"><path d="M0 0 C8.8 -13.1 28.9 -16.7 40.1 -1.2 C28.9 9.4 10.0 13.1 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L35.3 -1.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(53.3 6.1) rotate(35.5)"><path d="M0 0 C8.2 -12.1 26.7 -9.7 37.1 1.2 C26.7 14.5 9.3 12.1 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L32.7 1.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(71.8 3.3) rotate(-63.0)"><path d="M0 0 C7.5 -11.1 24.6 -14.7 34.2 -1.2 C24.6 7.6 8.5 11.1 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L30.1 -1.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(90.8 -2.0) rotate(33.4)"><path d="M0 0 C6.9 -10.2 22.5 -7.7 31.2 1.2 C22.5 12.7 7.8 10.2 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L27.5 1.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(110.2 -9.8) rotate(-73.8)"><path d="M0 0 C6.2 -9.2 20.3 -12.7 28.3 -1.2 C20.3 5.8 7.1 9.2 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L24.9 -1.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(130.0 -20.0) rotate(-21.7)"><path d="M0 0 C7.9 -12.0 25.9 -12.6 36.0 0.0 C25.9 11.4 9.0 12.0 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L31.7 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g></g><g transform="translate(520 545) rotate(200) scale(0.9)"><path d="M0 0 Q70 -30 150 -10" fill="none" stroke="#86efac" stroke-opacity=".32" stroke-width="1.4" stroke-linecap="round"/><g transform="translate(12.8 -5.0) rotate(-83.6)"><path d="M0 0 C8.2 -7.5 26.9 -7.9 37.4 0.0 C26.9 7.1 9.4 7.5 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L32.9 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(12.8 -5.0) rotate(44.2)"><path d="M0 0 C8.2 -7.5 26.9 -7.9 37.4 0.0 C26.9 7.1 9.4 7.5 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L32.9 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(25.8 -9.3) rotate(-77.4)"><path d="M0 0 C7.3 -6.6 23.9 -7.0 33.2 0.0 C23.9 6.3 8.3 6.6 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L29.2 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(25.8 -9.3) rotate(45.3)"><path d="M0 0 C7.3 -6.6 23.9 -7.0 33.2 0.0 C23.9 6.3 8.3 6.6 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L29.2 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(38.9 -12.6) rotate(-70.2)"><path d="M0 0 C7.1 -6.5 23.3 -6.8 32.3 0.0 C23.3 6.1 8.1 6.5 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L28.4 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(38.9 -12.6) rotate(49.1)"><path d="M0 0 C7.1 -6.5 23.3 -6.8 32.3 0.0 C23.3 6.1 8.1 6.5 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L28.4 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(52.2 -15.2) rotate(-75.5)"><path d="M0 0 C6.3 -5.8 20.7 -6.1 28.8 0.0 C20.7 5.5 7.2 5.8 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L25.4 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(52.2 -15.2) rotate(54.9)"><path d="M0 0 C6.3 -5.8 20.7 -6.1 28.8 0.0 C20.7 5.5 7.2 5.8 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L25.4 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(65.7 -16.9) rotate(-62.6)"><path d="M0 0 C5.8 -5.2 18.9 -5.5 26.2 0.0 C18.9 5.0 6.6 5.2 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L23.1 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(65.7 -16.9) rotate(59.6)"><path d="M0 0 C5.8 -5.2 18.9 -5.5 26.2 0.0 C18.9 5.0 6.6 5.2 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L23.1 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(79.3 -17.9) rotate(-65.2)"><path d="M0 0 C4.8 -4.4 15.8 -4.6 22.0 0.0 C15.8 4.2 5.5 4.4 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L19.3 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(79.3 -17.9) rotate(61.6)"><path d="M0 0 C4.8 -4.4 15.8 -4.6 22.0 0.0 C15.8 4.2 5.5 4.4 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L19.3 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(93.1 -17.9) rotate(-61.0)"><path d="M0 0 C4.1 -3.7 13.3 -3.9 18.4 0.0 C13.3 3.5 4.6 3.7 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L16.2 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(93.1 -17.9) rotate(60.0)"><path d="M0 0 C4.1 -3.7 13.3 -3.9 18.4 0.0 C13.3 3.5 4.6 3.7 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L16.2 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(107.1 -17.2) rotate(-61.7)"><path d="M0 0 C3.6 -3.3 11.7 -3.4 16.3 0.0 C11.7 3.1 4.1 3.3 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L14.3 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(107.1 -17.2) rotate(69.4)"><path d="M0 0 C3.6 -3.3 11.7 -3.4 16.3 0.0 C11.7 3.1 4.1 3.3 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L14.3 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(121.2 -15.6) rotate(-56.6)"><path d="M0 0 C3.0 -2.7 9.8 -2.9 13.6 0.0 C9.8 2.6 3.4 2.7 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L12.0 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(121.2 -15.6) rotate(68.9)"><path d="M0 0 C3.0 -2.7 9.8 -2.9 13.6 0.0 C9.8 2.6 3.4 2.7 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L12.0 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(135.5 -13.2) rotate(-55.1)"><path d="M0 0 C2.7 -2.5 8.8 -2.6 12.3 0.0 C8.8 2.3 3.1 2.5 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L10.8 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(135.5 -13.2) rotate(72.5)"><path d="M0 0 C2.7 -2.5 8.8 -2.6 12.3 0.0 C8.8 2.3 3.1 2.5 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L10.8 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(150.0 -10.0) rotate(14.0)"><path d="M0 0 C2.6 -3.0 8.6 -3.2 12.0 0.0 C8.6 2.8 3.0 3.0 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L10.6 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g></g><g transform="translate(90 605) rotate(0) scale(1.0)"><path d="M-14 0 Q-19.6 -27.500000000000004 -28 -50" fill="none" stroke="#86efac" stroke-opacity=".30" stroke-width="1.6" stroke-linecap="round"/><path d="M-7 0 Q-9.8 -36.300000000000004 -14 -66" fill="none" stroke="#86efac" stroke-opacity=".30" stroke-width="1.6" stroke-linecap="round"/><path d="M0 0 Q0.8 -42.900000000000006 2 -78" fill="none" stroke="#86efac" stroke-opacity=".30" stroke-width="1.6" stroke-linecap="round"/><path d="M8 0 Q12.0 -34.1 18 -62" fill="none" stroke="#86efac" stroke-opacity=".30" stroke-width="1.6" stroke-linecap="round"/><path d="M15 0 Q21.4 -25.3 31 -46" fill="none" stroke="#86efac" stroke-opacity=".30" stroke-width="1.6" stroke-linecap="round"/></g><g transform="translate(300 605) rotate(-6) scale(0.7)"><g transform="translate(0.0 0.0) rotate(-150.9)"><path d="M0 0 C18.4 -8.0 60.3 -8.4 83.7 0.0 C60.3 7.6 20.9 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L73.7 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-135.1)"><path d="M0 0 C19.9 -8.0 65.1 -8.4 90.5 0.0 C65.1 7.6 22.6 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L79.6 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-122.7)"><path d="M0 0 C16.9 -8.0 55.4 -8.4 77.0 0.0 C55.4 7.6 19.2 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L67.7 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-102.9)"><path d="M0 0 C17.4 -8.0 56.9 -8.4 79.0 0.0 C56.9 7.6 19.7 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L69.5 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-92.8)"><path d="M0 0 C20.7 -8.0 67.6 -8.4 93.9 0.0 C67.6 7.6 23.5 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L82.7 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-76.1)"><path d="M0 0 C16.4 -8.0 53.6 -8.4 74.4 0.0 C53.6 7.6 18.6 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L65.5 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-58.1)"><path d="M0 0 C16.7 -8.0 54.6 -8.4 75.8 0.0 C54.6 7.6 19.0 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L66.7 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-43.9)"><path d="M0 0 C18.6 -8.0 61.0 -8.4 84.7 0.0 C61.0 7.6 21.2 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L74.6 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(0.0 0.0) rotate(-26.6)"><path d="M0 0 C15.4 -8.0 50.5 -8.4 70.1 0.0 C50.5 7.6 17.5 8.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L61.7 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><circle r="3" fill="#86efac" fill-opacity=".35"/></g><g transform="translate(210 275) rotate(38) scale(1)"><g transform="translate(0.0 0.0) rotate(0.0)"><path d="M0 0 C13.2 -20.0 43.2 -21.0 60.0 0.0 C43.2 19.0 15.0 20.0 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L52.8 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g></g><g transform="translate(30 375) rotate(-65) scale(1)"><g transform="translate(0.0 0.0) rotate(0.0)"><path d="M0 0 C11.0 -17.0 36.0 -17.9 50.0 0.0 C36.0 16.1 12.5 17.0 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L44.0 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g></g><g transform="translate(430 85) rotate(105) scale(1)"><g transform="translate(0.0 0.0) rotate(0.0)"><path d="M0 0 C11.9 -18.0 38.9 -18.9 54.0 0.0 C38.9 17.1 13.5 18.0 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L47.5 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g></g><g transform="translate(560 375) rotate(170) scale(1)"><g transform="translate(0.0 0.0) rotate(0.0)"><path d="M0 0 C10.1 -15.0 33.1 -15.8 46.0 0.0 C33.1 14.2 11.5 15.0 0 0Z" fill="#4ade80" fill-opacity="0.14" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L40.5 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g></g><g transform="translate(540 115) rotate(25) scale(0.6)"><path d="M0 0 Q4 40 -2 80" stroke="#86efac" stroke-opacity=".32" stroke-width="1.4" fill="none" stroke-linecap="round"/><g transform="translate(-1.0 50.0) rotate(-150.0)"><path d="M0 0 C4.8 -7.0 15.8 -7.4 22.0 0.0 C15.8 6.6 5.5 7.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L19.4 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(1.0 62.0) rotate(-30.0)"><path d="M0 0 C4.0 -6.0 13.0 -6.3 18.0 0.0 C13.0 5.7 4.5 6.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L15.8 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="rotate(0)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><g transform="rotate(60)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><g transform="rotate(120)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><g transform="rotate(180)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><g transform="rotate(240)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><g transform="rotate(300)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><circle r="4" fill="#86efac" fill-opacity=".30"/></g><g transform="translate(250 495) rotate(160) scale(0.55)"><path d="M0 0 Q4 40 -2 80" stroke="#86efac" stroke-opacity=".32" stroke-width="1.4" fill="none" stroke-linecap="round"/><g transform="translate(-1.0 50.0) rotate(-150.0)"><path d="M0 0 C4.8 -7.0 15.8 -7.4 22.0 0.0 C15.8 6.6 5.5 7.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L19.4 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="translate(1.0 62.0) rotate(-30.0)"><path d="M0 0 C4.0 -6.0 13.0 -6.3 18.0 0.0 C13.0 5.7 4.5 6.0 0 0Z" fill="#4ade80" fill-opacity="0.12" stroke="#86efac" stroke-opacity=".36" stroke-width="1.1" stroke-linejoin="round"/><path d="M0 0 L15.8 0.0" stroke="#86efac" stroke-opacity=".28" stroke-width=".9" fill="none" stroke-linecap="round"/></g><g transform="rotate(0)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><g transform="rotate(60)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><g transform="rotate(120)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><g transform="rotate(180)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><g transform="rotate(240)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><g transform="rotate(300)"><ellipse cx="0" cy="-12" rx="6" ry="11" fill="#4ade80" fill-opacity=".14" stroke="#86efac" stroke-opacity=".32" stroke-width="1"/></g><circle r="4" fill="#86efac" fill-opacity=".30"/></g><g transform="translate(330 245) rotate(0) scale(1)"><circle cx="-6.5" cy="3.3" r="2.5" fill="#86efac" fill-opacity=".30"/><circle cx="9.5" cy="0.8" r="2.1" fill="#86efac" fill-opacity=".30"/><circle cx="8.8" cy="-22.3" r="2.5" fill="#86efac" fill-opacity=".30"/><circle cx="14.0" cy="18.7" r="2.3" fill="#86efac" fill-opacity=".30"/><circle cx="-5.4" cy="-5.1" r="1.3" fill="#86efac" fill-opacity=".30"/></g><g transform="translate(60 465) rotate(0) scale(1)"><circle cx="6.7" cy="-21.9" r="1.3" fill="#86efac" fill-opacity=".30"/><circle cx="-14.6" cy="-16.9" r="1.7" fill="#86efac" fill-opacity=".30"/><circle cx="-22.4" cy="-25.0" r="1.4" fill="#86efac" fill-opacity=".30"/><circle cx="-19.9" cy="-6.8" r="1.2" fill="#86efac" fill-opacity=".30"/><circle cx="18.7" cy="5.7" r="1.4" fill="#86efac" fill-opacity=".30"/></g><g transform="translate(470 465) rotate(0) scale(1)"><circle cx="-12.4" cy="-7.6" r="1.7" fill="#86efac" fill-opacity=".30"/><circle cx="-18.9" cy="17.4" r="2.6" fill="#86efac" fill-opacity=".30"/><circle cx="-1.7" cy="-0.8" r="1.3" fill="#86efac" fill-opacity=".30"/><circle cx="-19.9" cy="-7.9" r="1.6" fill="#86efac" fill-opacity=".30"/><circle cx="16.4" cy="-16.9" r="1.2" fill="#86efac" fill-opacity=".30"/></g><g transform="translate(180 115) rotate(0) scale(1)"><circle cx="22.5" cy="1.4" r="1.4" fill="#86efac" fill-opacity=".30"/><circle cx="2.2" cy="-23.6" r="1.9" fill="#86efac" fill-opacity=".30"/><circle cx="23.9" cy="18.2" r="2.2" fill="#86efac" fill-opacity=".30"/><circle cx="-11.9" cy="-6.7" r="1.4" fill="#86efac" fill-opacity=".30"/><circle cx="13.6" cy="1.6" r="2.3" fill="#86efac" fill-opacity=".30"/></g></pattern></defs><rect width="100%" height="100%" fill="url(#vsPlantWall)"/></svg>
+                        <div class="absolute inset-0" style="background: radial-gradient(ellipse at 28% 55%, rgba(5,46,22,.55) 0%, rgba(5,46,22,0) 62%);"></div>
+                    </div>
+                    <!-- Detalhe decorativo de fundo -->
+                    <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-brand-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <div class="max-w-xl z-10 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 bg-brand-800/80 border border-brand-700/50 text-brand-300 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase">
+                            <svg class="vs-ic text-brand-400" aria-hidden="true"><use href="#i-seedling"/></svg> Excelência na Produção
+                        </div>
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                            Cultive Vida e Beleza no seu <span class="text-brand-400">Espaço</span>
+                        </h1>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Mudas selecionadas com o mais alto padrão de qualidade para produtores rurais, reflorestamento e o seu jardim residencial. Plantas vigorosas e raízes fortes.
+                        </p>
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#catalogo" class="bg-brand-500 hover:bg-brand-600 text-brand-950 font-bold px-7 py-3.5 rounded-2xl shadow-lg hover:shadow-brand-500/25 transition flex items-center gap-2 group">
+                                Explorar Catálogo <svg class="vs-ic group-hover:translate-y-1 transition" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+                            </a>
+                            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20consultar%20a%20disponibilidade%20de%20mudas%20no%20Viveiro%20Santana." target="_blank" class="bg-slate-800/80 hover:bg-slate-800 border border-slate-700 text-white font-semibold px-6 py-3.5 rounded-2xl transition flex items-center gap-2">
+                                <svg class="vs-ic text-brand-400 text-lg" aria-hidden="true"><use href="#i-whatsapp"/></svg> Falar no WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Imagem do hero (fornecida pelo usuário) -->
+                    <div class="relative w-full lg:w-[460px] shrink-0 z-10">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-brand-800/50 bg-slate-900 group">
+                            <img src="images/hero-cesta-presente.jpg"
+                                 alt="Cesta de presente com flores amarelas e brancas, vinho e petiscos - Viveiro Santana"
+                                 class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grid de Categorias Principais (9 Categorias) -->
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-slate-900">Explore por Categoria</h2>
+                        <p class="text-xs sm:text-sm text-slate-500">As 9 categorias oficiais do Viveiro Santana</p>
+                    </div>
+                </div>
+                <div id="categoriesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-9 gap-3">
+                    <!-- Preenchido via JS -->
+                </div>
+            </section>
+
+            <!-- Seção de Produtos com Filtros Laterais -->
+            <section id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    
+                    <!-- Barra Lateral de Filtros -->
+                    <aside class="w-full lg:w-72 shrink-0 space-y-6 bg-white p-6 rounded-3xl shadow-sm border border-slate-100 h-fit">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                            <h3 class="font-bold text-slate-900 flex items-center gap-2">
+                                <svg class="vs-ic text-brand-600" aria-hidden="true"><use href="#i-filter"/></svg> Filtros
+                            </h3>
+                            <button onclick="resetFilters()" class="text-xs text-brand-600 hover:underline font-semibold">Limpar</button>
+                        </div>
+
+                        <!-- Filtro de Faixa de Preço -->
+                        <div class="space-y-3">
+                            <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider">Faixa de Preço</h4>
+                            <div id="priceFiltersList" class="space-y-2 text-sm text-slate-600">
+                                <!-- Gerado dinamicamente via JS ocultando vazias -->
+                            </div>
+                        </div>
+
+                        <!-- Nuvem de Tags -->
+                        <div class="space-y-3 pt-4 border-t border-slate-100">
+                            <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider">Tags Populares</h4>
+                            <div id="tagsCloud" class="flex flex-wrap gap-1.5">
+                                <!-- Gerado dinamicamente -->
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Lista de Produtos -->
+                    <div class="flex-1 space-y-6">
+                        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div>
+                                <h3 id="currentCategoryTitle" class="text-xl font-bold text-slate-900">Todas as Mudas e Plantas</h3>
+                                <p id="productCountInfo" class="text-xs text-slate-500">Mostrando produtos disponíveis</p>
+                            </div>
+                            <div class="flex items-center gap-3 w-full sm:w-auto">
+                                <span class="text-xs text-slate-500 shrink-0">Ordenar por:</span>
+                                <select id="sortSelect" onchange="renderProducts()" class="bg-slate-50 border border-slate-200 text-xs font-semibold py-2 px-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 w-full sm:w-auto">
+                                    <option value="relevancia">Mais Relevantes</option>
+                                    <option value="menor-preco">Menor Preço</option>
+                                    <option value="maior-preco">Maior Preço</option>
+                                    <option value="nome">Nome (A-Z)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Grid de Produtos -->
+                        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <!-- Preenchido via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Avaliações Estilo Google -->
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <div class="bg-brand-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
+                    <div class="absolute right-0 top-0 w-96 h-96 bg-brand-800/40 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-8 relative z-10">
+                        <div>
+                            <div class="flex items-center gap-2 text-amber-400 text-lg mb-2">
+                                <svg class="vs-ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="vs-ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="vs-ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="vs-ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="vs-ic" aria-hidden="true"><use href="#i-star"/></svg>
+                            </div>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold">Avaliado com Nota 4.9 de 5.0</h2>
+                            <p class="text-xs sm:text-sm text-brand-200 mt-1">Baseado em mais de 1.250 produtores rurais e paisagistas satisfeitos.</p>
+                        </div>
+                        <div class="bg-brand-800/80 border border-brand-700 p-4 rounded-2xl flex items-center gap-4">
+                            <img src="images/avaliacoes-google.png" alt="Google" class="w-10 h-10 rounded-full">
+                            <div>
+                                <h4 class="font-bold text-sm">Google Avaliações Verificadas</h4>
+                                <span class="text-xs text-brand-300">Selo de Qualidade Agrícola</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+                        <div class="bg-brand-950/60 border border-brand-800/60 p-5 rounded-2xl space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-sm">Carlos Eduardo Mendes</span>
+                                <span class="text-amber-400 text-xs"><svg class="vs-ic" aria-hidden="true"><use href="#i-star"/></svg> 5.0</span>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed">"Comprei 500 mudas para reflorestamento na minha fazenda. Taxa de pegamento excelente e entrega pontual. Recomendo muito!"</p>
+                        </div>
+                        <div class="bg-brand-950/60 border border-brand-800/60 p-5 rounded-2xl space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-sm">Mariana Ribeiro</span>
+                                <span class="text-amber-400 text-xs"><svg class="vs-ic" aria-hidden="true"><use href="#i-star"/></svg> 5.0</span>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed">"As orquídeas chegaram perfeitas aqui em casa, muito bem embaladas e com botões florais preservados. Site nota 10!"</p>
+                        </div>
+                        <div class="bg-brand-950/60 border border-brand-800/60 p-5 rounded-2xl space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-sm">Roberto S. Silveira</span>
+                                <span class="text-amber-400 text-xs"><svg class="vs-ic" aria-hidden="true"><use href="#i-star"/></svg> 5.0</span>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed">"Atendimento impecável via WhatsApp e mudas frutíferas de excelente porte. Já sou cliente fiel."</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Single Product View -->
+        <div id="productDetailView" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 hidden">
+            <!-- Gerado Dinamicamente -->
+        </div>
+
+        <!-- Checkout View -->
+        <div id="checkoutView" class="max-w-4xl mx-auto px-4 py-8 hidden">
+            <!-- Gerado Dinamicamente -->
+        </div>
+    </main>
+
+    <!-- Hero Final: imagem com transição de cor da direita para a esquerda -->
+    <section class="relative bg-brand-950 overflow-hidden mt-20">
+        <!-- Imagem à direita, esmaecendo para a esquerda até se fundir com o fundo verde -->
+        <img src="images/hero-orquideas.jpg"
+             alt="Arranjos de orquídeas roxas e amarelas em vasos rosa - Viveiro Santana"
+             class="absolute inset-y-0 right-0 w-full lg:w-[60%] h-full object-cover opacity-40 lg:opacity-100"
+             style="object-position: center 22%; -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.55) 30%, #000 70%); mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.55) 30%, #000 70%);">
+        <!-- Esmaecer embaixo para encontrar o rodapé -->
+        <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-brand-950 to-transparent pointer-events-none"></div>
+        <!-- Esmaecer em cima suavemente -->
+        <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-brand-950/70 to-transparent pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 min-h-[420px] lg:min-h-[520px] flex items-center">
+            <div class="max-w-lg space-y-6 text-center lg:text-left mx-auto lg:mx-0">
+                <div class="inline-flex items-center gap-2 bg-brand-800/80 border border-brand-700/50 text-brand-300 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase">
+                    <svg class="vs-ic text-brand-400" aria-hidden="true"><use href="#i-seedling"/></svg> Viveiro Santana
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
+                    Encante seu ambiente com <span class="text-brand-400">orquídeas</span> e plantas ornamentais
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Fale com a nossa equipe e encontre a muda ideal para o seu jardim, sua casa ou seu presente.
+                </p>
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="#" onclick="filterByCategory('Orquídeas', true); return false;" class="bg-brand-500 hover:bg-brand-600 text-brand-950 font-bold px-7 py-3.5 rounded-2xl shadow-lg hover:shadow-brand-500/25 transition flex items-center gap-2">
+                        Ver Orquídeas <svg class="vs-ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+                    </a>
+                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20consultar%20a%20disponibilidade%20de%20mudas%20no%20Viveiro%20Santana." target="_blank" class="bg-slate-800/80 hover:bg-slate-800 border border-slate-700 text-white font-semibold px-6 py-3.5 rounded-2xl transition flex items-center gap-2">
+                        <svg class="vs-ic text-brand-400 text-lg" aria-hidden="true"><use href="#i-whatsapp"/></svg> Falar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-950 text-slate-300 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-brand-900 flex items-center justify-center p-1 border border-brand-800">
+                        <svg viewBox="0 0 200 200" class="w-full h-full text-brand-400" fill="currentColor">
+                            <path d="M100 20C55.8 20 20 55.8 20 100s35.8 80 80 80 80-35.8 80-80-35.8-80-80-80z" fill="#15803d"/>
+                            <path d="M100 45c-30.3 0-55 24.7-55 55 0 15.2 6.1 29 16.1 39.1l10.6-10.6C64.6 122.2 60 111.6 60 100c0-22.1 17.9-40 40-40s40 17.9 40 40c0 11.6-4.6 22.2-12.7 29.5l10.6 10.6C148.9 129 155 115.2 155 100c0-30.3-24.7-55-55-55z" fill="#22c55e"/>
+                        </svg>
+                    </div>
+                    <span class="text-lg font-extrabold text-white">Viveiro Santana</span>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Referência nacional em produção de mudas ornamentais, frutíferas, nativas e insumos agrícolas de alta performance.
+                </p>
+                <div class="flex items-center gap-3 text-brand-400">
+                    <a href="#" class="w-8 h-8 rounded-full bg-brand-900 flex items-center justify-center hover:bg-brand-800 transition text-white"><svg class="vs-ic" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-brand-900 flex items-center justify-center hover:bg-brand-800 transition text-white"><svg class="vs-ic" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-brand-900 flex items-center justify-center hover:bg-brand-800 transition text-white"><svg class="vs-ic" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Nossas 9 Categorias</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#" onclick="filterByCategory('Campo / Produtor rural', true); return false;" class="hover:text-brand-400 transition">Campo / Produtor rural</a></li>
+                    <li><a href="#" onclick="filterByCategory('Nativas e Reflorestamento', true); return false;" class="hover:text-brand-400 transition">Nativas e Reflorestamento</a></li>
+                    <li><a href="#" onclick="filterByCategory('Adubos e Fertilizantes', true); return false;" class="hover:text-brand-400 transition">Adubos e Fertilizantes</a></li>
+                    <li><a href="#" onclick="filterByCategory('Frutíferas', true); return false;" class="hover:text-brand-400 transition">Frutíferas</a></li>
+                    <li><a href="#" onclick="filterByCategory('Palmeiras', true); return false;" class="hover:text-brand-400 transition">Palmeiras</a></li>
+                    <li><a href="#" onclick="filterByCategory('Orquídeas', true); return false;" class="hover:text-brand-400 transition">Orquídeas</a></li>
+                    <li><a href="#" onclick="filterByCategory('Ornamentais', true); return false;" class="hover:text-brand-400 transition">Ornamentais</a></li>
+                    <li><a href="#" onclick="filterByCategory('Vasos', true); return false;" class="hover:text-brand-400 transition">Vasos</a></li>
+                    <li><a href="#" onclick="filterByCategory('Diversas', true); return false;" class="hover:text-brand-400 transition">Diversas</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Atendimento</h4>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li>Segunda à Sexta: 07h às 17h</li>
+                    <li>Sábados: 07h às 12h</li>
+                    <li>WhatsApp: (11) 99999-9999</li>
+                    <li>E-mail: contato@viveirosantana.com.br</li>
+                    <li>Rodovia dos Viveiros, Km 12 - São Paulo/SP</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Newsletter Agrícola</h4>
+                <p class="text-xs text-slate-400 mb-3">Receba dicas exclusivas e ofertas de mudas diretamente no seu e-mail.</p>
+                <div class="space-y-2">
+                    <input type="email" placeholder="Seu e-mail" class="w-full bg-brand-900 border border-brand-800 text-xs px-3 py-2.5 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    <button onclick="showToast('Inscrição realizada com sucesso!')" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs py-2.5 rounded-xl transition">Inscrever-se</button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-brand-900 text-center text-xs text-slate-500">
+            &copy; 2026 Viveiro Santana - Todos os direitos reservados. CNPJ: 12.345.678/0001-99.
+        </div>
+    </footer>
+
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity" onclick="toggleCartDrawer()"></div>
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                <div class="p-6 bg-brand-900 text-white flex items-center justify-between">
+                    <h3 class="font-bold text-lg flex items-center gap-2"><svg class="vs-ic" aria-hidden="true"><use href="#i-cart"/></svg> Seu Carrinho</h3>
+                    <button onclick="toggleCartDrawer()" class="text-brand-300 hover:text-white p-2 rounded-lg"><svg class="vs-ic text-lg" aria-hidden="true"><use href="#i-xmark"/></svg></button>
+                </div>
+                <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4 divide-y divide-slate-100">
+                    <!-- Preenchido via JS -->
+                </div>
+                <div class="p-6 bg-slate-50 border-t border-slate-100 space-y-4">
+                    <!-- Cupom -->
+                    <div class="flex gap-2">
+                        <input type="text" id="couponInput" placeholder="Cupom (ex: PIX5)" class="flex-1 bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-brand-500 uppercase">
+                        <button onclick="applyCoupon()" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-xl text-xs font-bold transition">Aplicar</button>
+                    </div>
+                    <div id="couponMessage" class="text-[11px] font-semibold text-emerald-600 hidden"></div>
+
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between text-slate-500">
+                            <span>Subtotal</span>
+                            <span id="cartSubtotal">R$ 0,00</span>
+                        </div>
+                        <div id="discountRow" class="flex justify-between text-emerald-600 hidden">
+                            <span>Desconto PIX (5%)</span>
+                            <span id="cartDiscount">R$ 0,00</span>
+                        </div>
+                        <div class="flex justify-between text-slate-900 font-extrabold text-lg pt-2 border-t border-slate-200">
+                            <span>Total</span>
+                            <span id="cartFinalTotal">R$ 0,00</span>
+                        </div>
+                    </div>
+                    <button onclick="goToCheckout()" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold py-3.5 rounded-2xl shadow-lg transition flex items-center justify-center gap-2">
+                        <span>Finalizar Pedido</span> <svg class="vs-ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="favoritesModal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+        <div class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm" onclick="toggleFavoritesModal()"></div>
+        <div class="min-h-screen px-4 text-center flex items-center justify-center">
+            <div class="inline-block w-full max-w-2xl bg-white rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all my-8 z-10">
+                <div class="p-6 bg-brand-900 text-white flex items-center justify-between">
+                    <h3 class="font-bold text-lg flex items-center gap-2"><svg class="vs-ic text-rose-500" aria-hidden="true"><use href="#i-heart-solid"/></svg> Meus Produtos Favoritos</h3>
+                    <button onclick="toggleFavoritesModal()" class="text-brand-300 hover:text-white"><svg class="vs-ic text-lg" aria-hidden="true"><use href="#i-xmark"/></svg></button>
+                </div>
+                <div id="favoritesListContainer" class="p-6 max-h-[60vh] overflow-y-auto space-y-4">
+                    <!-- Preenchido via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20atendimento%20sobre%20as%20mudas%20do%20Viveiro%20Santana." target="_blank" class="w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-2xl flex items-center justify-center text-2xl transition hover:scale-110 active:scale-95" title="Fale conosco no WhatsApp">
+            <svg class="vs-ic" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 text-white rounded-full shadow-xl flex items-center justify-center text-xl transition hover:scale-110 active:scale-95" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);" title="Siga no Instagram">
+            <svg class="vs-ic" aria-hidden="true"><use href="#i-instagram"/></svg>
+        </a>
+    </div>
+
+    <div id="toastContainer" class="fixed bottom-6 left-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <script>
+        // Dados Iniciais padrão com as 9 categorias exigidas rigorosamente
+        const defaultProducts = [
+            {
+                id: 'prod-1',
+                name: 'Muda de Eucalipto Grandis Selecionada (Tubete)',
+                category: 'Campo / Produtor rural',
+                price: 3.50,
+                oldPrice: 4.20,
+                stock: 2500,
+                image: 'images/produtos/01-eucalipto-grandis.jpg',
+                description: 'Mudas formadas em viveiro suspenso em tubetes de alta qualidade, raízes vigorosas, prontas para plantio em larga escala no campo e reflorestamento.',
+                tags: ['campo', 'reflorestamento', 'muda', 'eucalipto'],
+                featured: true
+            },
+            {
+                id: 'prod-2',
+                name: 'Muda de Ipê Amarelo (Nativa de Grande Porte)',
+                category: 'Nativas e Reflorestamento',
+                price: 28.00,
+                oldPrice: 35.00,
+                stock: 120,
+                image: 'images/produtos/02-ipe-amarelo.jpg',
+                description: 'Árvore símbolo do Brasil. Produzida a partir de matrizes selecionadas. Essencial para paisagismo urbano e reflorestamento de áreas degradadas.',
+                tags: ['nativas', 'ipe', 'arvore', 'reflorestamento'],
+                featured: true
+            },
+            {
+                id: 'prod-3',
+                name: 'Adubo Orgânico Composto Premium (Saco 25kg)',
+                category: 'Adubos e Fertilizantes',
+                price: 49.90,
+                oldPrice: 59.90,
+                stock: 300,
+                image: 'images/produtos/03-adubo-organico.jpg',
+                description: 'Composto orgânico maturado rico em macro e micronutrientes. Ideal para plantio de mudas frutíferas, hortas e preparação de covas.',
+                tags: ['adubo', 'fertilizante', 'organico', 'solo'],
+                featured: true
+            },
+            {
+                id: 'prod-4',
+                name: 'Muda de Manga Palmer Enxertada (Produção Rápida)',
+                category: 'Frutíferas',
+                price: 45.00,
+                oldPrice: 55.00,
+                stock: 85,
+                image: 'images/produtos/04-manga-palmer.jpg',
+                description: 'Muda enxertada com 1,20m de altura média. Frutos doces, polpa firme e excelente produtividade já nos primeiros anos.',
+                tags: ['frutiferas', 'manga', 'enxertada', 'muda'],
+                featured: true
+            },
+            {
+                id: 'prod-5',
+                name: 'Palmeira Imperial (Roystonea oleracea) - Muda 1,80m',
+                category: 'Palmeiras',
+                price: 180.00,
+                oldPrice: 220.00,
+                stock: 40,
+                image: 'images/produtos/05-palmeira-imperial.jpg',
+                description: 'Majestosa e imponente. Perfeita para entradas de chácaras, fazendas e projetos paisagísticos sofisticados.',
+                tags: ['palmeiras', 'imperial', 'paisagismo', 'arvore'],
+                featured: true
+            },
+            {
+                id: 'prod-6',
+                name: 'Orquídea Phalaenopsis Branca Premium (Vaso Decorativo)',
+                category: 'Orquídeas',
+                price: 65.00,
+                oldPrice: 79.90,
+                stock: 50,
+                image: 'images/produtos/06-orquidea-phalaenopsis.jpg',
+                description: 'Flores duradouras, elegantes e de fácil cultivo em ambientes internos bem iluminados. Acompanha vaso especial.',
+                tags: ['orquideas', 'flores', 'decoracao', 'vaso'],
+                featured: true
+            },
+            {
+                id: 'prod-7',
+                name: 'Muda de Buxinho (Buxus sempervirens) para Cercas Vivas',
+                category: 'Ornamentais',
+                price: 18.50,
+                oldPrice: 22.00,
+                stock: 210,
+                image: 'images/produtos/07-buxinho.jpg',
+                description: 'Arbusto ornamental ideal para formação de bordaduras, topiaria e cercas vivas em jardins residenciais.',
+                tags: ['ornamentais', 'buxinho', 'jardim', 'cerca viva'],
+                featured: false
+            },
+            {
+                id: 'prod-8',
+                name: 'Vaso de Polietileno Rústico Texturizado (Grande 50L)',
+                category: 'Vasos',
+                price: 139.90,
+                oldPrice: 169.90,
+                stock: 60,
+                image: 'images/produtos/08-vaso-polietileno.jpg',
+                description: 'Resistente a intempéries, raios UV e quedas. Leve e com design elegante imitando cerâmica rústica.',
+                tags: ['vasos', 'polietileno', 'decoracao', 'jardim'],
+                featured: false
+            },
+            {
+                id: 'prod-9',
+                name: 'Kit Sementes e Mudas Diversas para Paisagismo Silvestre',
+                category: 'Diversas',
+                price: 89.90,
+                oldPrice: 110.00,
+                stock: 95,
+                image: 'images/produtos/09-kit-mudas-diversas.jpg',
+                description: 'Variedade de espécies rústicas para cobrir encostas, formar maciços florestais e enriquecer a biodiversidade local.',
+                tags: ['diversas', 'kit', 'sementes', 'silvestre'],
+                featured: false
+            }
+        ];
+
+        // Estado Global da Aplicação
+        let products = JSON.parse(localStorage.getItem('vs_products')) || defaultProducts;
+        let cart = JSON.parse(localStorage.getItem('vs_cart')) || [];
+        let favorites = JSON.parse(localStorage.getItem('vs_favorites')) || [];
+        let currentCategory = 'Todas';
+        let searchQuery = '';
+        let selectedPriceFilter = 'all';
+        let selectedTagFilter = '';
+        let appliedCoupon = null;
+        let couponDiscountPercent = 0;
+
+        // Inicialização ao carregar a página
+        window.onload = function() {
+            renderCategoriesGrid();
+            renderProducts();
+            renderPriceFilters();
+            renderTagsCloud();
+            updateCartUI();
+            updateFavoritesBadge();
+        };
+
+        // Salvar dados no localStorage
+        function saveData() {
+            localStorage.setItem('vs_products', JSON.stringify(products));
+            localStorage.setItem('vs_cart', JSON.stringify(cart));
+            localStorage.setItem('vs_favorites', JSON.stringify(favorites));
+        }
+
+        // Rola até a área de produtos, descontando o header fixo
+        function scrollToCatalog() {
+            const el = document.getElementById('catalogo');
+            if (!el) return;
+            const header = document.querySelector('header');
+            const offset = (header ? header.offsetHeight : 0) + 12;
+            const top = el.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+        }
+
+        // Sistema de Rotas / Views
+        function router(view, param = null, keepScroll = false) {
+            const wasHome = !document.getElementById('homeView').classList.contains('hidden');
+            document.getElementById('homeView').classList.add('hidden');
+            document.getElementById('productDetailView').classList.add('hidden');
+            document.getElementById('checkoutView').classList.add('hidden');
+
+            // keepScroll: filtros/busca na home não devem puxar a página para o topo
+            if (keepScroll && view === 'home') {
+                if (!wasHome) {
+                    // veio de outra tela: leva direto ao catálogo
+                    setTimeout(scrollToCatalog, 0);
+                }
+            } else {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+
+            if (view === 'home') {
+                document.getElementById('homeView').classList.remove('hidden');
+            } else if (view === 'product') {
+                document.getElementById('productDetailView').classList.remove('hidden');
+                renderProductDetail(param);
+            } else if (view === 'checkout') {
+                document.getElementById('checkoutView').classList.remove('hidden');
+                renderCheckoutView();
+            }
+        }
+
+        // Ícones provisórios (SVG embutido, não depende de fonte externa)
+        const CATEGORY_ICONS = {
+            'Campo / Produtor rural': '<circle cx="7" cy="16" r="3.5"/><circle cx="18.5" cy="17.5" r="2"/><path d="M10.5 16H16.5M3.5 12.5V8h5l1.5 4.5h7.5l1.5 3"/>',
+            'Nativas e Reflorestamento': '<path d="M12 3l5 7h-3l4 6H6l4-6H7l5-7z"/><path d="M12 16v5"/>',
+            'Adubos e Fertilizantes': '<path d="M7 7h10l1.5 3v9a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1v-9L7 7z"/><path d="M9 7l1-3h4l1 3"/><path d="M12 12v5M9.5 14.5h5"/>',
+            'Frutíferas': '<path d="M12 8c-2-1.5-6-1-6 4 0 4 2.5 8 4.5 8 .9 0 1-.5 1.5-.5s.6.5 1.5.5c2 0 4.5-4 4.5-8 0-5-4-5.5-6-4z"/><path d="M12 8c0-2 1-3.5 3-4"/>',
+            'Palmeiras': '<path d="M12.5 21c0-5 .3-8 .8-10"/><path d="M13 11C10 8 6 8.5 4 11"/><path d="M13 11c1-4 4-6 8-5"/><path d="M13 11C11 7 11 5 12 3"/><path d="M13 11c3 0 6 2 7 5"/>',
+            'Orquídeas': '<circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="6.2" r="2.8"/><circle cx="17.5" cy="10.2" r="2.8"/><circle cx="15.4" cy="16.6" r="2.8"/><circle cx="8.6" cy="16.6" r="2.8"/><circle cx="6.5" cy="10.2" r="2.8"/>',
+            'Ornamentais': '<path d="M5 19C5 10 10 5 20 4c0 10-5 15-14 15z"/><path d="M5 19c3-5 6-8 10-10"/>',
+            'Vasos': '<path d="M6 13h12l-1.5 7h-9L6 13z"/><path d="M5 13h14"/><path d="M12 13V9"/><path d="M12 10C9 10 8 8 8 6c3 0 4 1 4 4zM12 10c3 0 4-2 4-4-3 0-4 1-4 4z"/>',
+            'Diversas': '<path d="M4 8l8-4 8 4v9l-8 4-8-4V8z"/><path d="M4 8l8 4 8-4M12 12v9"/>'
+        };
+        function categoryIcon(name) {
+            const inner = CATEGORY_ICONS[name] || CATEGORY_ICONS['Diversas'];
+            return `<svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${inner}</svg>`;
+        }
+
+        // Renderizar Grid das 9 Categorias no topo
+        function renderCategoriesGrid() {
+            const categories = [
+                { name: 'Campo / Produtor rural', icon: 'fa-tractor', count: 0 },
+                { name: 'Nativas e Reflorestamento', icon: 'fa-tree', count: 0 },
+                { name: 'Adubos e Fertilizantes', icon: 'fa-flask', count: 0 },
+                { name: 'Frutíferas', icon: 'fa-apple-whole', count: 0 },
+                { name: 'Palmeiras', icon: 'fa-seedling', count: 0 },
+                { name: 'Orquídeas', icon: 'fa-pagelines', count: 0 },
+                { name: 'Ornamentais', icon: 'fa-leaf', count: 0 },
+                { name: 'Vasos', icon: 'fa-bucket', count: 0 },
+                { name: 'Diversas', icon: 'fa-box-open', count: 0 }
+            ];
+
+            // Contar produtos por categoria
+            categories.forEach(cat => {
+                cat.count = products.filter(p => p.category === cat.name).length;
+            });
+
+            const grid = document.getElementById('categoriesGrid');
+            grid.innerHTML = categories.map(cat => `
+                <div onclick="filterByCategory('${cat.name}')" class="${currentCategory === cat.name ? 'bg-brand-50 border-2 border-brand-500 ring-2 ring-brand-500/20' : 'bg-white border border-slate-200'} hover:bg-brand-50 hover:border-brand-500 rounded-2xl p-4 text-center cursor-pointer transition group shadow-sm flex flex-col items-center justify-center gap-2">
+                    <div class="w-12 h-12 rounded-full bg-brand-50 group-hover:bg-brand-600 group-hover:text-white text-brand-700 flex items-center justify-center text-lg transition shadow-inner">
+                        ${categoryIcon(cat.name)}
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xs text-slate-800 group-hover:text-brand-900 leading-tight">${cat.name}</h4>
+                        <span class="text-[10px] text-slate-400 mt-0.5 block">${cat.count} itens</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filtrar por Categoria
+        function filterByCategory(catName, goToCatalog = false) {
+            currentCategory = catName;
+            selectedTagFilter = '';
+            router('home', null, true);
+
+            // Atualizar classes dos botões do menu (compara pelo data-cat)
+            document.querySelectorAll('.nav-cat-btn').forEach(btn => {
+                if (btn.dataset.cat === catName) {
+                    btn.classList.add('bg-brand-800', 'text-white');
+                    btn.classList.remove('text-brand-100');
+                } else {
+                    btn.classList.remove('bg-brand-800', 'text-white');
+                    btn.classList.add('text-brand-100');
+                }
+            });
+
+            document.getElementById('currentCategoryTitle').textContent = catName === 'Todas' ? 'Todas as Mudas e Plantas' : catName;
+            renderCategoriesGrid(); // atualiza o destaque do card selecionado
+            renderProducts();
+
+            // Menu e rodapé levam direto até os produtos da categoria clicada
+            if (goToCatalog) requestAnimationFrame(scrollToCatalog);
+        }
+
+        // Filtro de Busca
+        // ===== Busca inteligente (pensada para quem não sabe o nome exato do produto) =====
+        const SEARCH_STOPWORDS = ['de','da','do','das','dos','para','pra','com','sem','e','a','o','as','os','um','uma','em','no','na','por','quero','preciso','procuro','comprar','queria','gostaria','tem','tenho','algum','alguma','muito','mais'];
+        const SEARCH_SYNONYMS = {
+            fruta:['frutiferas','manga'], frutas:['frutiferas','manga'], pomar:['frutiferas'], laranja:['frutiferas'], limao:['frutiferas'], citrico:['frutiferas'], citricos:['frutiferas'],
+            flor:['orquideas','flores','ornamentais'], flores:['orquideas','flores','ornamentais'], florzinha:['orquideas','flores'], enfeite:['decoracao','ornamentais','orquideas'], decorar:['decoracao'], presente:['orquideas','decoracao'],
+            arvore:['nativas','arvore','reflorestamento'], arvores:['nativas','arvore','reflorestamento'], floresta:['nativas','reflorestamento'], mata:['nativas','reflorestamento'], reflorestar:['reflorestamento'],
+            planta:['muda','ornamentais'], plantas:['muda','ornamentais'], plantar:['muda'],
+            terra:['adubo','solo','fertilizante'], solo:['adubo'], nutriente:['adubo','fertilizante'], nutrientes:['adubo','fertilizante'], adubar:['adubo'], esterco:['adubo','organico'], fertilizar:['fertilizante'],
+            pote:['vaso','vasos'], potes:['vaso','vasos'], cachepo:['vaso'], jarro:['vaso'],
+            cerca:['buxinho','ornamentais'], jardim:['ornamentais','jardim'], jardinagem:['jardim','ornamentais'], paisagismo:['palmeiras','ornamentais'],
+            fazenda:['campo','rural'], sitio:['campo','rural'], lavoura:['campo'], plantacao:['campo'], produtor:['campo','rural'], rural:['campo'], lenha:['eucalipto'], madeira:['eucalipto','nativas'],
+            coqueiro:['palmeiras'], palmito:['palmeiras'], semente:['sementes','kit'], sementes:['sementes','kit']
+        };
+        const SEARCH_HINTS = [['Mudas de árvores','arvore'], ['Frutas','fruta'], ['Flores e orquídeas','flor'], ['Adubo e terra','terra'], ['Vasos','vaso'], ['Cerca viva','cerca']];
+
+        function normText(str) {
+            return String(str || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
+        }
+        function escHtml(str) {
+            return String(str == null ? '' : str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        }
+        function lev(a, b) {
+            if (a === b) return 0;
+            const m = a.length, n = b.length;
+            if (!m) return n; if (!n) return m;
+            let prev = Array.from({length: n + 1}, (_, j) => j);
+            for (let i = 1; i <= m; i++) {
+                const cur = [i];
+                for (let j = 1; j <= n; j++) {
+                    cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+                }
+                prev = cur;
+            }
+            return prev[n];
+        }
+        const W_NAME = {exact: 10, prefix: 8, sub: 4, fuzzy: 5};
+        const W_TAG  = {exact: 6,  prefix: 5, sub: 3, fuzzy: 3};
+        const W_DESC = {exact: 3,  prefix: 2, sub: 1, fuzzy: 0};
+
+        function fieldScore(term, words, w) {
+            let best = 0;
+            for (const word of words) {
+                if (word === term) best = Math.max(best, w.exact);
+                else if (word.startsWith(term)) best = Math.max(best, w.prefix);
+                else if (term.length >= 3 && word.includes(term)) best = Math.max(best, w.sub);
+                else if (term.length >= 4 && w.fuzzy) {
+                    // tolera erro de digitação (ex.: "orkidea", "palmera")
+                    const limFull = term.length >= 7 ? 2 : 1;
+                    const limPref = term.length >= 5 ? 2 : 1;   // palavra ainda sendo digitada
+                    const dPref = Math.min(lev(term, word.slice(0, term.length)), lev(term, word.slice(0, term.length + 1)));
+                    if (lev(term, word) <= limFull || dPref <= limPref) best = Math.max(best, w.fuzzy);
+                }
+            }
+            return best;
+        }
+        function termScore(term, f) {
+            const a = fieldScore(term, f.name, W_NAME), b = fieldScore(term, f.tags, W_TAG), c = fieldScore(term, f.desc, W_DESC);
+            const [top, mid, low] = [a, b, c].sort((x, y) => y - x);
+            let sc = top + 0.25 * (mid + low);                       // aparecer em mais de um campo vale um pouco mais
+            if (a > 0 && f.name[0] && f.name[0].startsWith(term)) sc += 3; // nome que começa com o que foi digitado vem na frente
+            return sc;
+        }
+        function productFields(p) {
+            return {
+                name: normText(p.name).split(' ').filter(Boolean),
+                tags: normText([p.category].concat(p.tags || []).join(' ')).split(' ').filter(Boolean),
+                desc: normText(p.description).split(' ').filter(Boolean)
+            };
+        }
+        // Pontuação de um produto para o que a pessoa digitou (0 = não combina)
+        function scoreProduct(p, query) {
+            const tokens = normText(query).split(' ').filter(t => t.length >= 2 && !SEARCH_STOPWORDS.includes(t));
+            if (!tokens.length) return 0;
+            const f = productFields(p);
+            let total = 0, matched = 0;
+            tokens.forEach(t => {
+                let sc = termScore(t, f);
+                (SEARCH_SYNONYMS[t] || []).forEach(syn => { sc = Math.max(sc, termScore(syn, f) * 0.6); });
+                if (sc > 0) { matched++; total += sc; }
+            });
+            const needed = tokens.length === 1 ? 1 : Math.ceil(tokens.length / 2);
+            return matched >= needed ? total + matched : 0;
+        }
+        function searchProducts(query) {
+            const all = products.map(p => ({product: p, score: scoreProduct(p, query)}))
+                .filter(r => r.score > 0)
+                .sort((a, b) => b.score - a.score);
+            if (!all.length) return all;
+            const cut = all[0].score * 0.4;                          // descarta combinações muito fracas
+            return all.filter(r => r.score >= cut);
+        }
+        function matchesSearch(p, query) {
+            if (!normText(query)) return true;
+            return searchProducts(query).some(r => r.product === p);
+        }
+
+        // ===== Caixa de sugestões =====
+        const sugState = {active: -1};
+        function suggestionCfg(source) {
+            return source === 'mobile'
+                ? {input: document.getElementById('searchInputMobile'), box: document.getElementById('searchSuggestionsMobile')}
+                : {input: document.getElementById('searchInput'), box: document.getElementById('searchSuggestions')};
+        }
+        function closeSuggestions() {
+            ['searchSuggestions', 'searchSuggestionsMobile'].forEach(id => document.getElementById(id).classList.add('hidden'));
+            sugState.active = -1;
+        }
+        function hintChipsHTML(source) {
+            return SEARCH_HINTS.map(h => `<button type="button" onclick="applySearchHint('${h[1]}', '${source}')" class="px-3 py-1.5 rounded-full bg-brand-50 text-brand-800 text-xs font-semibold hover:bg-brand-100 transition">${h[0]}</button>`).join('');
+        }
+        function showSuggestions(source) {
+            const cfg = suggestionCfg(source);
+            const other = suggestionCfg(source === 'mobile' ? 'desktop' : 'mobile');
+            other.box.classList.add('hidden');
+            sugState.active = -1;
+            const raw = cfg.input.value.trim();
+
+            if (raw.length < 2) {
+                cfg.box.innerHTML = `<div class="p-4"><p class="text-[11px] font-bold text-slate-500 uppercase tracking-wide mb-2">O que você está procurando?</p><div class="flex flex-wrap gap-2">${hintChipsHTML(source)}</div></div>`;
+                cfg.box.classList.remove('hidden');
+                return;
+            }
+
+            const cat = source === 'desktop' ? document.getElementById('searchCategorySelect').value : '';
+            const results = searchProducts(raw).filter(r => !cat || r.product.category === cat);
+
+            if (!results.length) {
+                cfg.box.innerHTML = `<div class="p-5 text-center"><p class="text-sm font-bold text-slate-800">Não encontramos “${escHtml(raw)}”</p><p class="text-xs text-slate-500 mt-1 mb-3">Tente palavras simples, como as sugestões abaixo:</p><div class="flex flex-wrap justify-center gap-2">${hintChipsHTML(source)}</div></div>`;
+                cfg.box.classList.remove('hidden');
+                return;
+            }
+
+            const rows = results.slice(0, 6).map(r => {
+                const p = r.product;
+                const out = p.stock !== undefined && p.stock <= 0;
+                return `<button type="button" onclick="selectSuggestion('${escHtml(p.id)}')" class="vs-sug w-full flex items-center gap-3 px-4 py-2.5 text-left hover:bg-brand-50 transition">
+                    <img src="${escHtml(p.image)}" alt="" class="w-12 h-12 rounded-xl object-cover bg-slate-100 shrink-0">
+                    <span class="flex-1 min-w-0">
+                        <span class="block text-sm font-semibold text-slate-900 truncate">${escHtml(p.name)}</span>
+                        <span class="block text-xs text-slate-500 truncate">${escHtml(p.category)}</span>
+                    </span>
+                    <span class="text-right shrink-0">
+                        <span class="block text-sm font-extrabold text-brand-800">R$ ${p.price.toFixed(2)}</span>
+                        ${out ? '<span class="block text-[10px] font-bold text-rose-600">Esgotado</span>' : ''}
+                    </span>
+                </button>`;
+            }).join('');
+            cfg.box.innerHTML = `<p class="px-4 pt-3 pb-1 text-[11px] font-bold text-slate-500 uppercase tracking-wide">Produtos encontrados</p>${rows}
+                <button type="button" onclick="goToSearchResults('${source}')" class="w-full px-4 py-3 text-sm font-bold text-brand-700 hover:bg-brand-50 border-t border-slate-100 text-center transition">Ver todos os resultados para “${escHtml(raw)}” (${results.length})</button>`;
+            cfg.box.classList.remove('hidden');
+        }
+        function selectSuggestion(id) {
+            closeSuggestions();
+            document.getElementById('searchInput').value = '';
+            document.getElementById('searchInputMobile').value = '';
+            searchQuery = '';
+            renderProducts();
+            openProductDetail(id);
+        }
+        function goToSearchResults(source) {
+            const cfg = suggestionCfg(source);
+            closeSuggestions();
+            cfg.input.blur();
+            if (!cfg.input.value.trim() && !(source === 'desktop' && document.getElementById('searchCategorySelect').value)) return;
+            router('home', null, true);
+            renderProducts();
+            requestAnimationFrame(scrollToCatalog);
+        }
+        function applySearchHint(query, source) {
+            const cfg = suggestionCfg(source);
+            cfg.input.value = query;
+            cfg.input.focus();
+            if (source === 'mobile') handleSearchMobile(); else handleSearch();
+        }
+        function onSearchKeydown(e, source) {
+            const cfg = suggestionCfg(source);
+            const rows = [...cfg.box.querySelectorAll('.vs-sug')];
+            if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                if (cfg.box.classList.contains('hidden')) { showSuggestions(source); return; }
+                if (!rows.length) return;
+                e.preventDefault();
+                sugState.active = e.key === 'ArrowDown' ? (sugState.active + 1) % rows.length : (sugState.active - 1 + rows.length) % rows.length;
+                rows.forEach((r, i) => r.classList.toggle('bg-brand-50', i === sugState.active));
+                rows[sugState.active].scrollIntoView({block: 'nearest'});
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (sugState.active >= 0 && rows[sugState.active]) rows[sugState.active].click();
+                else goToSearchResults(source);
+            } else if (e.key === 'Escape') {
+                closeSuggestions();
+            }
+        }
+        document.addEventListener('click', e => {
+            if (!e.target.closest('#searchWrap') && !e.target.closest('#searchWrapMobile')) closeSuggestions();
+        });
+
+        function isHomeVisible() {
+            return !document.getElementById('homeView').classList.contains('hidden');
+        }
+        function handleSearch(fromSelect = false) {
+            searchQuery = document.getElementById('searchInput').value.toLowerCase();
+            const catSelect = document.getElementById('searchCategorySelect').value;
+            if (fromSelect) {
+                currentCategory = catSelect || 'Todas';
+                goToSearchResults('desktop');
+                return;
+            }
+            if (catSelect) currentCategory = catSelect;
+            if (isHomeVisible()) renderProducts();   // o catálogo acompanha o que a pessoa digita
+            showSuggestions('desktop');
+        }
+
+        function handleSearchMobile() {
+            searchQuery = document.getElementById('searchInputMobile').value.toLowerCase();
+            if (isHomeVisible()) renderProducts();
+            showSuggestions('mobile');
+        }
+
+        // Renderizar Filtros de Preço (ocultando faixas vazias)
+        function renderPriceFilters() {
+            const ranges = [
+                { id: 'all', label: 'Todos os preços', min: 0, max: Infinity },
+                { id: 'under20', label: 'Até R$ 20,00', min: 0, max: 20 },
+                { id: '20to50', label: 'R$ 20,00 a R$ 50,00', min: 20, max: 50 },
+                { id: '50to100', label: 'R$ 50,00 a R$ 100,00', min: 50, max: 100 },
+                { id: 'above100', label: 'Acima de R$ 100,00', min: 100, max: Infinity }
+            ];
+
+            const list = document.getElementById('priceFiltersList');
+            list.innerHTML = ranges.map(r => {
+                const count = products.filter(p => p.price >= r.min && p.price <= r.max).length;
+                if (count === 0 && r.id !== 'all') return ''; // Ocultar faixas vazias
+                const isSelected = selectedPriceFilter === r.id;
+                return `
+                    <label class="flex items-center justify-between cursor-pointer hover:text-brand-700 transition ${isSelected ? 'font-bold text-brand-800' : ''}">
+                        <div class="flex items-center gap-2">
+                            <input type="radio" name="priceRange" value="${r.id}" ${isSelected ? 'checked' : ''} onchange="setPriceFilter('${r.id}')" class="text-brand-600 focus:ring-brand-500">
+                            <span class="text-xs">${r.label}</span>
+                        </div>
+                        <span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded-full text-slate-500">${count}</span>
+                    </label>
+                `;
+            }).join('');
+        }
+
+        function setPriceFilter(filterId) {
+            selectedPriceFilter = filterId;
+            renderProducts();
+            renderPriceFilters();
+        }
+
+        // Nuvem de Tags
+        function renderTagsCloud() {
+            const allTagsSet = new Set();
+            products.forEach(p => {
+                if (p.tags) p.tags.forEach(t => allTagsSet.add(t));
+            });
+
+            const cloud = document.getElementById('tagsCloud');
+            cloud.innerHTML = Array.from(allTagsSet).map(tag => `
+                <button onclick="filterByTag('${tag}')" class="text-[11px] font-medium px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-brand-100 text-slate-700 hover:text-brand-800 transition ${selectedTagFilter === tag ? 'bg-brand-600 text-white hover:bg-brand-700' : ''}">
+                    #${tag}
+                </button>
+            `).join('');
+        }
+
+        function filterByTag(tag) {
+            selectedTagFilter = selectedTagFilter === tag ? '' : tag;
+            renderProducts();
+            renderTagsCloud();
+        }
+
+        // Renderizar Produtos com base nos filtros
+        function renderProducts() {
+            let filtered = products.filter(p => {
+                const matchCat = currentCategory === 'Todas' || p.category === currentCategory;
+                const matchSearch = matchesSearch(p, searchQuery);
+                
+                let matchPrice = true;
+                if (selectedPriceFilter === 'under20') matchPrice = p.price <= 20;
+                else if (selectedPriceFilter === '20to50') matchPrice = p.price > 20 && p.price <= 50;
+                else if (selectedPriceFilter === '50to100') matchPrice = p.price > 50 && p.price <= 100;
+                else if (selectedPriceFilter === 'above100') matchPrice = p.price > 100;
+
+                let matchTag = true;
+                if (selectedTagFilter) {
+                    matchTag = p.tags && p.tags.includes(selectedTagFilter);
+                }
+
+                return matchCat && matchSearch && matchPrice && matchTag;
+            });
+
+            // Ordenação
+            const sortVal = document.getElementById('sortSelect').value;
+            if (sortVal === 'menor-preco') filtered.sort((a,b) => a.price - b.price);
+            else if (sortVal === 'maior-preco') filtered.sort((a,b) => b.price - a.price);
+            else if (sortVal === 'nome') filtered.sort((a,b) => a.name.localeCompare(b.name));
+
+            document.getElementById('productCountInfo').textContent = `Mostrando ${filtered.length} produto(s) encontrado(s)`;
+
+            const grid = document.getElementById('productsGrid');
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-16 text-center space-y-3 bg-white rounded-3xl border border-slate-100">
+                        <svg class="vs-ic text-4xl text-slate-300" aria-hidden="true"><use href="#i-seedling"/></svg>
+                        <h4 class="font-bold text-slate-800 text-lg">Nenhuma muda encontrada</h4>
+                        <p class="text-xs text-slate-500">Tente buscar por outro termo ou limpar os filtros selecionados.</p>
+                        <button onclick="resetFilters()" class="bg-brand-600 text-white text-xs font-bold px-4 py-2 rounded-xl transition">Limpar Filtros</button>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(p => {
+                const isFav = favorites.includes(p.id);
+                const discount = p.oldPrice ? Math.round(((p.oldPrice - p.price) / p.oldPrice) * 100) : 0;
+                return `
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+                        <div>
+                            <div class="relative bg-slate-100 h-56 overflow-hidden">
+                                <img src="${p.image}" alt="${p.name}" onerror="this.onerror=null;this.src='images/produtos/sem-foto.jpg'" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 cursor-pointer" onclick="openProductDetail('${p.id}')">
+                                ${discount > 0 ? `<span class="absolute top-3 left-3 bg-rose-500 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">-${discount}% OFF</span>` : ''}
+                                <button onclick="toggleFavorite('${p.id}')" class="absolute top-3 right-3 w-9 h-9 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-slate-700 hover:text-rose-500 shadow-md transition">
+                                    <svg class="vs-ic ${isFav ? 'text-rose-500' : ''}" aria-hidden="true"><use href="#${isFav ? 'i-heart-solid' : 'i-heart'}"/></svg>
+                                </button>
+                                <span class="absolute bottom-3 left-3 bg-brand-900/80 backdrop-blur-sm text-brand-100 text-[10px] font-bold px-2.5 py-1 rounded-lg">
+                                    ${p.category}
+                                </span>
+                            </div>
+                            <div class="p-5 space-y-2">
+                                <h4 font-bold text-slate-900 font-bold hover:text-brand-700 cursor-pointer transition line-clamp-2" onclick="openProductDetail('${p.id}')">${p.name}</h4>
+                                <p class="text-xs text-slate-500 line-clamp-2">${p.description}</p>
+                            </div>
+                        </div>
+                        <div class="p-5 pt-0 flex items-center justify-between gap-3 border-t border-slate-50 mt-4">
+                            <div>
+                                <span class="text-[10px] text-slate-400 block line-through">${p.oldPrice ? 'R$ ' + p.oldPrice.toFixed(2) : ''}</span>
+                                <span class="text-lg font-extrabold text-brand-900">R$ ${p.price.toFixed(2)}</span>
+                            </div>
+                            <button onclick="addToCart('${p.id}')" class="bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-md transition flex items-center gap-1.5 active:scale-95">
+                                <svg class="vs-ic" aria-hidden="true"><use href="#i-cart-plus"/></svg> Comprar
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function resetFilters() {
+            currentCategory = 'Todas';
+            searchQuery = '';
+            selectedPriceFilter = 'all';
+            selectedTagFilter = '';
+            document.getElementById('searchInput').value = '';
+            document.getElementById('searchInputMobile').value = '';
+            document.getElementById('searchCategorySelect').value = '';
+            closeSuggestions();
+            filterByCategory('Todas');
+        }
+
+        // Visualizar Detalhe do Produto
+        function openProductDetail(productId) {
+            const p = products.find(prod => prod.id === productId);
+            if (!p) return;
+            router('product', p);
+        }
+
+        function renderProductDetail(p) {
+            const container = document.getElementById('productDetailView');
+            container.innerHTML = `
+                <button onclick="router('home')" class="mb-6 text-xs font-bold text-brand-700 hover:underline flex items-center gap-1.5">
+                    <svg class="vs-ic" aria-hidden="true"><use href="#i-arrow-left"/></svg> Voltar ao catálogo
+                </button>
+                <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-100 grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="space-y-4">
+                        <div class="rounded-2xl overflow-hidden bg-slate-100 h-80 sm:h-96 border border-slate-200">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="space-y-6 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <span class="bg-brand-50 text-brand-700 text-xs font-bold px-3 py-1 rounded-full">${p.category}</span>
+                            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900">${p.name}</h1>
+                            <div class="flex items-center gap-4">
+                                <span class="text-3xl font-extrabold text-brand-900">R$ ${p.price.toFixed(2)}</span>
+                                ${p.oldPrice ? `<span class="text-sm text-slate-400 line-through">R$ ${p.oldPrice.toFixed(2)}</span>` : ''}
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed">${p.description}</p>
+                            <div class="text-xs text-slate-500 font-semibold">
+                                <svg class="vs-ic text-brand-600 mr-1" aria-hidden="true"><use href="#i-box"/></svg> Estoque disponível: <span class="text-slate-800">${p.stock} unidades</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 pt-6 border-t border-slate-100">
+                            <div class="flex gap-4">
+                                <button onclick="addToCart('${p.id}')" class="flex-1 bg-brand-600 hover:bg-brand-500 text-white font-bold py-3.5 rounded-2xl shadow-lg transition flex items-center justify-center gap-2">
+                                    <svg class="vs-ic" aria-hidden="true"><use href="#i-cart-plus"/></svg> Adicionar ao Carrinho
+                                </button>
+                                <a href="https://wa.me/5511999999999?text=Olá!%20Tenho%20interesse%20na%20muda:%20${encodeURIComponent(p.name)}%20(R$%20${p.price.toFixed(2)})." target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3.5 rounded-2xl shadow-lg transition flex items-center justify-center gap-2">
+                                    <svg class="vs-ic text-lg" aria-hidden="true"><use href="#i-whatsapp"/></svg> Perguntar no WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Carrinho e Drawer
+        function toggleCartDrawer() {
+            const drawer = document.getElementById('cartDrawer');
+            drawer.classList.toggle('hidden');
+            renderCartItems();
+        }
+
+        function addToCart(productId) {
+            const p = products.find(prod => prod.id === productId);
+            if (!p) return;
+
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ ...p, quantity: 1 });
+            }
+
+            saveData();
+            updateCartUI();
+            showToast(`"${p.name}" adicionado ao carrinho!`);
+        }
+
+        function updateCartQuantity(productId, delta) {
+            const item = cart.find(i => i.id === productId);
+            if (!item) return;
+            item.quantity += delta;
+            if (item.quantity <= 0) {
+                cart = cart.filter(i => i.id !== productId);
+            }
+            saveData();
+            updateCartUI();
+            renderCartItems();
+        }
+
+        function renderCartItems() {
+            const container = document.getElementById('cartItemsContainer');
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="py-12 text-center space-y-3">
+                        <svg class="vs-ic text-4xl text-slate-300" aria-hidden="true"><use href="#i-cart"/></svg>
+                        <p class="text-xs text-slate-500">Seu carrinho está vazio.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = cart.map(item => `
+                py-4 flex items-center gap-4">
+                    <img src="${item.image}" class="w-16 h-16 object-cover rounded-xl bg-slate-100 shrink-0">
+                    <div class="flex-1">
+                        <h4 class="font-bold text-xs text-slate-900 line-clamp-1">${item.name}</h4>
+                        <span class="text-xs font-extrabold text-brand-900">R$ ${item.price.toFixed(2)}</span>
+                        <div class="flex items-center gap-2 mt-2">
+                            <button onclick="updateCartQuantity('${item.id}', -1)" class="w-6 h-6 bg-slate-100 hover:bg-slate-200 rounded-lg flex items-center justify-center text-xs font-bold">-</button>
+                            <span class="text-xs font-bold">${item.quantity}</span>
+                            <button onclick="updateCartQuantity('${item.id}', 1)" class="w-6 h-6 bg-slate-100 hover:bg-slate-200 rounded-lg flex items-center justify-center text-xs font-bold">+</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateCartUI() {
+            const totalItems = cart.reduce((sum, i) => sum + i.quantity, 0);
+            document.getElementById('cartCountBadge').textContent = totalItems;
+
+            const subtotal = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
+            document.getElementById('cartSubtotal').textContent = `R$ ${subtotal.toFixed(2)}`;
+            document.getElementById('cartTotalHeader').textContent = `R$ ${subtotal.toFixed(2)}`;
+
+            let discount = 0;
+            if (appliedCoupon || subtotal > 0) {
+                // Desconto PIX automático de 5% ou cupom
+                const discPercent = appliedCoupon ? couponDiscountPercent : 5;
+                discount = subtotal * (discPercent / 100);
+                document.getElementById('discountRow').classList.remove('hidden');
+                document.getElementById('cartDiscount').textContent = `- R$ ${discount.toFixed(2)}`;
+            } else {
+                document.getElementById('discountRow').classList.add('hidden');
+            }
+
+            const finalTotal = subtotal - discount;
+            document.getElementById('cartFinalTotal').textContent = `R$ ${finalTotal.toFixed(2)}`;
+        }
+
+        function applyCoupon() {
+            const code = document.getElementById('couponInput').value.trim().toUpperCase();
+            const msg = document.getElementById('couponMessage');
+            if (code === 'PIX5' || code === 'SANTANA10') {
+                appliedCoupon = code;
+                couponDiscountPercent = code === 'SANTANA10' ? 10 : 5;
+                msg.textContent = `Cupom ${code} aplicado com sucesso! (${couponDiscountPercent}% OFF)`;
+                msg.classList.remove('hidden');
+                updateCartUI();
+            } else {
+                msg.textContent = 'Cupom inválido ou expirado.';
+                msg.classList.remove('hidden', 'text-emerald-600');
+                msg.classList.add('text-rose-600');
+            }
+        }
+
+        // Favoritos
+        function toggleFavorite(productId) {
+            if (favorites.includes(productId)) {
+                favorites = favorites.filter(id => id !== productId);
+                showToast('Removido dos favoritos.');
+            } else {
+                favorites.push(productId);
+                showToast('Adicionado aos favoritos!');
+            }
+            saveData();
+            updateFavoritesBadge();
+            renderProducts();
+        }
+
+        function updateFavoritesBadge() {
+            const badge = document.getElementById('favoritesBadge');
+            if (favorites.length > 0) {
+                badge.textContent = favorites.length;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        function toggleFavoritesModal() {
+            const modal = document.getElementById('favoritesModal');
+            modal.classList.toggle('hidden');
+            const container = document.getElementById('favoritesListContainer');
+            
+            const favProducts = products.filter(p => favorites.includes(p.id));
+            if (favProducts.length === 0) {
+                container.innerHTML = `<p class="text-xs text-slate-500 text-center py-8">Nenhum produto nos favoritos.</p>`;
+                return;
+            }
+
+            container.innerHTML = favProducts.map(p => `
+                <div class="flex items-center justify-between gap-4 p-3 bg-slate-50 rounded-2xl">
+                    <img src="${p.image}" class="w-14 h-14 object-cover rounded-xl">
+                    <div class="flex-1 text-left">
+                        <h4 class="font-bold text-xs text-slate-900">${p.name}</h4>
+                        <span class="text-xs font-extrabold text-brand-900">R$ ${p.price.toFixed(2)}</span>
+                    </div>
+                    <button onclick="addToCart('${p.id}')" class="bg-brand-600 text-white px-3 py-2 rounded-xl text-xs font-bold">Comprar</button>
+                </div>
+            `).join('');
+        }
+
+        // Checkout View & ViaCEP
+        function goToCheckout() {
+            if (cart.length === 0) {
+                showToast('Seu carrinho está vazio.');
+                return;
+            }
+            toggleCartDrawer();
+            router('checkout');
+        }
+
+        function renderCheckoutView() {
+            const container = document.getElementById('checkoutView');
+            const subtotal = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
+            const discount = subtotal * 0.05;
+            const total = subtotal - discount;
+
+            container.innerHTML = `
+                <div class="space-y-6">
+                    <button onclick="router('home')" class="text-xs font-bold text-brand-700 hover:underline flex items-center gap-1.5">
+                        <svg class="vs-ic" aria-hidden="true"><use href="#i-arrow-left"/></svg> Continuar comprando
+                    </button>
+                    <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-100 space-y-6">
+                        <div class="border-b border-slate-100 pb-4">
+                            <h2 class="text-xl font-extrabold text-slate-900">Finalizar Pedido - Entrega</h2>
+                            <p class="text-xs text-slate-500">Preencha seus dados para gerar o pedido via WhatsApp</p>
+                        </div>
+
+                        <form id="checkoutForm" onsubmit="submitWhatsAppOrder(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nome Completo *</label>
+                                    <input type="text" id="chkName" required placeholder="João da Silva" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Telefone / WhatsApp *</label>
+                                    <input type="text" id="chkPhone" required placeholder="(11) 99999-9999" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">CEP *</label>
+                                    <input type="text" id="chkCep" required placeholder="01001-000" onblur="consultarCep(this.value)" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Endereço (Rua, Nº) *</label>
+                                    <input type="text" id="chkAddress" required placeholder="Rodovia dos Viveiros, 100" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Bairro *</label>
+                                    <input type="text" id="chkNeighborhood" required placeholder="Centro" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Cidade *</label>
+                                    <input type="text" id="chkCity" required placeholder="São Paulo" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Estado (UF) *</label>
+                                    <input type="text" id="chkState" required placeholder="SP" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">CPF ou CNPJ (para Nota Fiscal)</label>
+                                <input type="text" id="chkDoc" placeholder="000.000.000-00 ou CNPJ" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            </div>
+
+                            <div class="bg-slate-50 p-4 rounded-2xl space-y-2 border border-slate-200">
+                                <div class="flex justify-between text-xs text-slate-600">
+                                    <span>Subtotal do Pedido:</span>
+                                    <span>R$ ${subtotal.toFixed(2)}</span>
+                                </div>
+                                <div class="flex justify-between text-xs text-emerald-600 font-bold">
+                                    <span>Desconto PIX (5%):</span>
+                                    <span>- R$ ${discount.toFixed(2)}</span>
+                                </div>
+                                <div class="flex justify-between text-sm font-extrabold text-slate-900 pt-2 border-t border-slate-200">
+                                    <span>Total com Desconto PIX:</span>
+                                    <span>R$ ${total.toFixed(2)}</span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-2xl shadow-xl transition flex items-center justify-center gap-2 text-base">
+                                <svg class="vs-ic text-xl" aria-hidden="true"><use href="#i-whatsapp"/></svg> Enviar Pedido pelo WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ViaCEP Integration
+        async function consultarCep(cep) {
+            const cleanCep = cep.replace(/\D/g, '');
+            if (cleanCep.length !== 8) return;
+            try {
+                const res = await fetch(`https://viacep.com.br/ws/${cleanCep}/json/`);
+                const data = await res.json();
+                if (!data.erro) {
+                    document.getElementById('chkAddress').value = data.logradouro || '';
+                    document.getElementById('chkNeighborhood').value = data.bairro || '';
+                    document.getElementById('chkCity').value = data.localidade || '';
+                    document.getElementById('chkState').value = data.uf || '';
+                    showToast('Endereço carregado via CEP!');
+                }
+            } catch (err) {
+                console.error('Erro ViaCEP', err);
+            }
+        }
+
+        function submitWhatsAppOrder(e) {
+            e.preventDefault();
+            const name = document.getElementById('chkName').value;
+            const phone = document.getElementById('chkPhone').value;
+            const cep = document.getElementById('chkCep').value;
+            const address = document.getElementById('chkAddress').value;
+            const neighborhood = document.getElementById('chkNeighborhood').value;
+            const city = document.getElementById('chkCity').value;
+            const state = document.getElementById('chkState').value;
+            const doc = document.getElementById('chkDoc').value;
+
+            const subtotal = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
+            const discount = subtotal * 0.05;
+            const total = subtotal - discount;
+
+            let text = `🌿 *NOVO PEDIDO - VIVEIRO SANTANA* 🌿\n\n`;
+            text += `👤 *Cliente:* ${name}\n`;
+            text += `📞 *Telefone:* ${phone}\n`;
+            text += `📄 *CPF/CNPJ:* ${doc || 'Não informado'}\n\n`;
+            text += `📍 *Endereço de Entrega:*\n${address}, ${neighborhood} - ${city}/${state} (CEP: ${cep})\n\n`;
+            text += `🛒 *Itens do Pedido:*\n`;
+            cart.forEach(i => {
+                text += `- ${i.quantity}x ${i.name} (R$ ${(i.price * i.quantity).toFixed(2)})\n`;
+            });
+            text += `\n💰 *Subtotal:* R$ ${subtotal.toFixed(2)}`;
+            text += `\n🏷️ *Desconto PIX (5%):* - R$ ${discount.toFixed(2)}`;
+            text += `\n✅ *TOTAL FINAL:* R$ ${total.toFixed(2)}`;
+
+            const url = `https://wa.me/5511999999999?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+        }
+
+        // Sistema de Notificações Toast
+        function showToast(message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'bg-slate-900 text-white text-xs font-bold px-4 py-3 rounded-2xl shadow-xl flex items-center gap-2 animate-bounce';
+            toast.innerHTML = `<svg class="vs-ic text-brand-400" aria-hidden="true"><use href="#i-circle-check"/></svg> <span>${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

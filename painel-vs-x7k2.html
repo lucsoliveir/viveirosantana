@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <title>Acesso restrito</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#15803d">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: {
+            colors: { brand: { 50:'#f0fdf4',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#22c55e',600:'#16a34a',700:'#15803d',800:'#166534',900:'#14532d',950:'#052e16' } },
+            fontFamily: { sans: ['"Plus Jakarta Sans"','sans-serif'] } } } }
+    </script>
+    <style>.vs-ic{width:1em;height:1em;display:inline-block;vertical-align:-0.125em;flex-shrink:0}body{font-family:'Plus Jakarta Sans',sans-serif;}</style>
+</head>
+<body class="bg-brand-950 min-h-screen flex items-center justify-center p-4 antialiased">
+    <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false"><symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></g></symbol><symbol id="i-plus" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></g></symbol></svg>
+
+    <div class="w-full max-w-3xl bg-white rounded-3xl overflow-hidden shadow-2xl">
+        <div class="p-6 bg-brand-950 text-white flex items-center justify-between border-b border-brand-900">
+            <h1 class="font-bold text-lg flex items-center gap-2"><svg class="vs-ic" aria-hidden="true"><use href="#i-lock"/></svg> Painel Administrativo</h1>
+            <a href="index.html" class="text-xs text-brand-300 hover:text-white">Ver site</a>
+        </div>
+
+        <!-- Login -->
+        <div id="adminLoginForm" class="p-8 space-y-4 max-w-md mx-auto">
+            <div class="text-center space-y-1">
+                <h2 class="font-extrabold text-xl text-slate-900">Acesso Restrito</h2>
+                <p class="text-xs text-slate-500">Digite a senha para cadastrar mudas e produtos.</p>
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Senha de Acesso</label>
+                <input type="password" id="adminPasswordInput" autocomplete="off" onkeydown="if(event.key==='Enter')verifyAdminLogin()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                <p id="loginError" class="hidden text-xs text-rose-600 font-semibold mt-2">Senha incorreta.</p>
+            </div>
+            <button onclick="verifyAdminLogin()" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold py-3 rounded-xl transition shadow-md">Entrar no Painel</button>
+        </div>
+
+        <!-- Cadastro de produto -->
+        <div id="adminDashboard" class="p-8 space-y-6 hidden">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                <div>
+                    <h2 class="font-extrabold text-lg text-slate-900">Cadastrar Nova Muda / Produto</h2>
+                    <p class="text-xs text-slate-500">Preencha os dados abaixo para publicar no e-commerce</p>
+                </div>
+                <button onclick="logoutAdmin()" class="text-xs text-rose-600 hover:underline font-bold">Sair do Painel</button>
+            </div>
+                    <form id="addProductForm" onsubmit="handleAddNewProduct(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nome da Planta / Produto *</label>
+                                <input type="text" id="newProdName" required placeholder="Ex: Muda de Manga Palmer Enxertada" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Categoria Obrigatória *</label>
+                                <select id="newProdCategory" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                    <option value="Campo / Produtor rural">1. Campo / Produtor rural</option>
+                                    <option value="Nativas e Reflorestamento">2. Nativas e Reflorestamento</option>
+                                    <option value="Adubos e Fertilizantes">3. Adubos e Fertilizantes</option>
+                                    <option value="Frutíferas">4. Frutíferas</option>
+                                    <option value="Palmeiras">5. Palmeiras</option>
+                                    <option value="Orquídeas">6. Orquídeas</option>
+                                    <option value="Ornamentais">7. Ornamentais</option>
+                                    <option value="Vasos">8. Vasos</option>
+                                    <option value="Diversas">9. Diversas</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Preço (R$) *</label>
+                                <input type="number" step="0.01" id="newProdPrice" required placeholder="45.00" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Preço Antigo (R$ - Opcional)</label>
+                                <input type="number" step="0.01" id="newProdOldPrice" placeholder="60.00" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Estoque Disponível *</label>
+                                <input type="number" id="newProdStock" required value="50" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Upload de Imagem (Arquivo local ou URL)</label>
+                            <input type="file" id="newProdImageFile" accept="image/*" onchange="convertImageFile(this)" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-brand-50 file:text-brand-700 hover:file:bg-brand-100">
+                            <input type="hidden" id="newProdImageBase64">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Descrição Detalhada *</label>
+                            <textarea id="newProdDesc" rows="3" required placeholder="Descreva o tamanho da muda, porte, cuidados e características..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Tags (separadas por vírgula)</label>
+                            <input type="text" id="newProdTags" placeholder="muda, enxertada, frutífera, campo" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold py-3.5 rounded-xl transition shadow-md flex items-center justify-center gap-2">
+                            <svg class="vs-ic" aria-hidden="true"><use href="#i-plus"/></svg> Publicar Muda / Produto no Site
+                        </button>
+                    </form>
+            <p id="okMsg" class="hidden text-sm font-bold text-emerald-600 text-center"></p>
+        </div>
+    </div>
+
+    <script>
+                const defaultProducts = [
+            {
+                id: 'prod-1',
+                name: 'Muda de Eucalipto Grandis Selecionada (Tubete)',
+                category: 'Campo / Produtor rural',
+                price: 3.50,
+                oldPrice: 4.20,
+                stock: 2500,
+                image: 'images/produtos/01-eucalipto-grandis.jpg',
+                description: 'Mudas formadas em viveiro suspenso em tubetes de alta qualidade, raízes vigorosas, prontas para plantio em larga escala no campo e reflorestamento.',
+                tags: ['campo', 'reflorestamento', 'muda', 'eucalipto'],
+                featured: true
+            },
+            {
+                id: 'prod-2',
+                name: 'Muda de Ipê Amarelo (Nativa de Grande Porte)',
+                category: 'Nativas e Reflorestamento',
+                price: 28.00,
+                oldPrice: 35.00,
+                stock: 120,
+                image: 'images/produtos/02-ipe-amarelo.jpg',
+                description: 'Árvore símbolo do Brasil. Produzida a partir de matrizes selecionadas. Essencial para paisagismo urbano e reflorestamento de áreas degradadas.',
+                tags: ['nativas', 'ipe', 'arvore', 'reflorestamento'],
+                featured: true
+            },
+            {
+                id: 'prod-3',
+                name: 'Adubo Orgânico Composto Premium (Saco 25kg)',
+                category: 'Adubos e Fertilizantes',
+                price: 49.90,
+                oldPrice: 59.90,
+                stock: 300,
+                image: 'images/produtos/03-adubo-organico.jpg',
+                description: 'Composto orgânico maturado rico em macro e micronutrientes. Ideal para plantio de mudas frutíferas, hortas e preparação de covas.',
+                tags: ['adubo', 'fertilizante', 'organico', 'solo'],
+                featured: true
+            },
+            {
+                id: 'prod-4',
+                name: 'Muda de Manga Palmer Enxertada (Produção Rápida)',
+                category: 'Frutíferas',
+                price: 45.00,
+                oldPrice: 55.00,
+                stock: 85,
+                image: 'images/produtos/04-manga-palmer.jpg',
+                description: 'Muda enxertada com 1,20m de altura média. Frutos doces, polpa firme e excelente produtividade já nos primeiros anos.',
+                tags: ['frutiferas', 'manga', 'enxertada', 'muda'],
+                featured: true
+            },
+            {
+                id: 'prod-5',
+                name: 'Palmeira Imperial (Roystonea oleracea) - Muda 1,80m',
+                category: 'Palmeiras',
+                price: 180.00,
+                oldPrice: 220.00,
+                stock: 40,
+                image: 'images/produtos/05-palmeira-imperial.jpg',
+                description: 'Majestosa e imponente. Perfeita para entradas de chácaras, fazendas e projetos paisagísticos sofisticados.',
+                tags: ['palmeiras', 'imperial', 'paisagismo', 'arvore'],
+                featured: true
+            },
+            {
+                id: 'prod-6',
+                name: 'Orquídea Phalaenopsis Branca Premium (Vaso Decorativo)',
+                category: 'Orquídeas',
+                price: 65.00,
+                oldPrice: 79.90,
+                stock: 50,
+                image: 'images/produtos/06-orquidea-phalaenopsis.jpg',
+                description: 'Flores duradouras, elegantes e de fácil cultivo em ambientes internos bem iluminados. Acompanha vaso especial.',
+                tags: ['orquideas', 'flores', 'decoracao', 'vaso'],
+                featured: true
+            },
+            {
+                id: 'prod-7',
+                name: 'Muda de Buxinho (Buxus sempervirens) para Cercas Vivas',
+                category: 'Ornamentais',
+                price: 18.50,
+                oldPrice: 22.00,
+                stock: 210,
+                image: 'images/produtos/07-buxinho.jpg',
+                description: 'Arbusto ornamental ideal para formação de bordaduras, topiaria e cercas vivas em jardins residenciais.',
+                tags: ['ornamentais', 'buxinho', 'jardim', 'cerca viva'],
+                featured: false
+            },
+            {
+                id: 'prod-8',
+                name: 'Vaso de Polietileno Rústico Texturizado (Grande 50L)',
+                category: 'Vasos',
+                price: 139.90,
+                oldPrice: 169.90,
+                stock: 60,
+                image: 'images/produtos/08-vaso-polietileno.jpg',
+                description: 'Resistente a intempéries, raios UV e quedas. Leve e com design elegante imitando cerâmica rústica.',
+                tags: ['vasos', 'polietileno', 'decoracao', 'jardim'],
+                featured: false
+            },
+            {
+                id: 'prod-9',
+                name: 'Kit Sementes e Mudas Diversas para Paisagismo Silvestre',
+                category: 'Diversas',
+                price: 89.90,
+                oldPrice: 110.00,
+                stock: 95,
+                image: 'images/produtos/09-kit-mudas-diversas.jpg',
+                description: 'Variedade de espécies rústicas para cobrir encostas, formar maciços florestais e enriquecer a biodiversidade local.',
+                tags: ['diversas', 'kit', 'sementes', 'silvestre'],
+                featured: false
+            }
+        ];
+
+        // Hash SHA-256 da senha (a senha em si não aparece no código)
+        const ADMIN_HASH = '8357e32c91d83fa1b8cb61002781ab24e38412575ce25c3cbdb7de26594fc1c9';
+
+        // SHA-256 em JS puro (funciona também fora de HTTPS)
+        function sha256(ascii) {
+            function rr(v, a) { return (v >>> a) | (v << (32 - a)); }
+            const K = [], H = [];
+            let words = [], result = '', isComposite = {};
+            const max = Math.pow(2, 32);
+            const bitLen = ascii.length * 8;
+            let pc = 0;
+            for (let c = 2; pc < 64; c++) {
+                if (!isComposite[c]) {
+                    for (let i = 0; i < 313; i += c) isComposite[i] = c;
+                    H[pc] = (Math.pow(c, .5) * max) | 0;
+                    K[pc++] = (Math.pow(c, 1 / 3) * max) | 0;
+                }
+            }
+            ascii += '\x80';
+            while (ascii.length % 64 - 56) ascii += '\x00';
+            for (let i = 0; i < ascii.length; i++) {
+                const j = ascii.charCodeAt(i);
+                if (j >> 8) return null;
+                words[i >> 2] |= j << ((3 - i) % 4) * 8;
+            }
+            words[words.length] = (bitLen / max) | 0;
+            words[words.length] = bitLen;
+            for (let j = 0; j < words.length;) {
+                const w = words.slice(j, j += 16);
+                const old = H.slice(0, 8);
+                const h = H.slice(0, 8);
+                for (let i = 0; i < 64; i++) {
+                    const w15 = w[i - 15], w2 = w[i - 2];
+                    const a = h[0], e = h[4];
+                    const t1 = h[7] + (rr(e, 6) ^ rr(e, 11) ^ rr(e, 25)) + ((e & h[5]) ^ (~e & h[6])) + K[i] +
+                        (w[i] = (i < 16) ? w[i] : (w[i - 16] + (rr(w15, 7) ^ rr(w15, 18) ^ (w15 >>> 3)) + w[i - 7] + (rr(w2, 17) ^ rr(w2, 19) ^ (w2 >>> 10))) | 0);
+                    const t2 = (rr(a, 2) ^ rr(a, 13) ^ rr(a, 22)) + ((a & h[1]) ^ (a & h[2]) ^ (h[1] & h[2]));
+                    h.unshift((t1 + t2) | 0);
+                    h[4] = (h[4] + t1) | 0;
+                    h.pop();
+                }
+                for (let i = 0; i < 8; i++) H[i] = (H[i] + h[i]) | 0;
+            }
+            for (let i = 0; i < 8; i++) for (let j = 3; j + 1; j--) {
+                const b = (H[i] >> (j * 8)) & 255;
+                result += ((b < 16) ? 0 : '') + b.toString(16);
+            }
+            return result;
+        }
+
+        function verifyAdminLogin() {
+            const pass = document.getElementById('adminPasswordInput').value;
+            if (sha256(pass) === ADMIN_HASH) {
+                sessionStorage.setItem('vs_admin_logged', 'true');
+                showAdminDashboard();
+            } else {
+                document.getElementById('loginError').classList.remove('hidden');
+                document.getElementById('adminPasswordInput').value = '';
+            }
+        }
+
+        function showAdminDashboard() {
+            document.getElementById('adminLoginForm').classList.add('hidden');
+            document.getElementById('adminDashboard').classList.remove('hidden');
+        }
+
+        function logoutAdmin() {
+            sessionStorage.removeItem('vs_admin_logged');
+            document.getElementById('adminDashboard').classList.add('hidden');
+            document.getElementById('adminLoginForm').classList.remove('hidden');
+            document.getElementById('adminPasswordInput').value = '';
+            document.getElementById('loginError').classList.add('hidden');
+        }
+
+        if (sessionStorage.getItem('vs_admin_logged') === 'true') showAdminDashboard();
+
+        function convertImageFile(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('newProdImageBase64').value = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function handleAddNewProduct(e) {
+            e.preventDefault();
+            // Só continua se estiver logado
+            if (sessionStorage.getItem('vs_admin_logged') !== 'true') return;
+
+            const name = document.getElementById('newProdName').value;
+            const category = document.getElementById('newProdCategory').value;
+            const price = parseFloat(document.getElementById('newProdPrice').value);
+            const oldPriceVal = document.getElementById('newProdOldPrice').value;
+            const oldPrice = oldPriceVal ? parseFloat(oldPriceVal) : null;
+            const stock = parseInt(document.getElementById('newProdStock').value);
+            const desc = document.getElementById('newProdDesc').value;
+            const tagsInput = document.getElementById('newProdTags').value;
+            const tags = tagsInput ? tagsInput.split(',').map(t => t.trim().toLowerCase()) : ['muda'];
+            const customImg = document.getElementById('newProdImageBase64').value;
+            const image = customImg || 'images/produtos/sem-foto.jpg';
+
+            // Usa a lista já salva (ou os produtos padrão, se for o primeiro cadastro)
+            let products;
+            try { products = JSON.parse(localStorage.getItem('vs_products')) || defaultProducts; }
+            catch (err) { products = defaultProducts; }
+
+            products.unshift({ id: 'prod-' + Date.now(), name, category, price, oldPrice, stock, image, description: desc, tags, featured: false });
+
+            try {
+                localStorage.setItem('vs_products', JSON.stringify(products));
+            } catch (err) {
+                alert('Não foi possível salvar (imagem muito grande?). Tente uma foto menor.');
+                return;
+            }
+
+            document.getElementById('addProductForm').reset();
+            document.getElementById('newProdImageBase64').value = '';
+            const ok = document.getElementById('okMsg');
+            ok.textContent = 'Muda cadastrada com sucesso!';
+            ok.classList.remove('hidden');
+            setTimeout(() => ok.classList.add('hidden'), 3000);
+        }
+    </script>
+</body>
+</html>
